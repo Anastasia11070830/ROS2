@@ -1,0 +1,3 @@
+* edc3020 (HEAD -> main) Revert "Bug: typo in sensor topic"
+* d5790a0 Bug: typo in sensor topic
+* e37c91f Stable version

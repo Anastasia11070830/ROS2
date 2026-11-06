@@ -1,0 +1,195 @@
+[INFO] [1792759857.026767777] [sensor_node]: Sensor Node started: rate=10.0 Hz, window=7, threshold=0.6 m
+[INFO] [1792759857.121436633] [sensor_node]: raw=1.40 m, filtered=1.40 m
+[INFO] [1792759858.217580691] [sensor_node]: raw=1.75 m, filtered=1.60 m
+[INFO] [1792759859.219670887] [sensor_node]: raw=1.89 m, filtered=1.85 m
+[INFO] [1792759860.317844551] [sensor_node]: raw=2.16 m, filtered=1.80 m
+[INFO] [1792759861.318333528] [sensor_node]: raw=2.28 m, filtered=2.24 m
+[INFO] [1792759862.318395369] [sensor_node]: raw=2.34 m, filtered=2.33 m
+[INFO] [1792759863.418395724] [sensor_node]: raw=2.38 m, filtered=2.41 m
+[INFO] [1792759864.518906050] [sensor_node]: raw=2.39 m, filtered=2.37 m
+[INFO] [1792759865.617908410] [sensor_node]: raw=2.22 m, filtered=2.22 m
+[INFO] [1792759866.618409114] [sensor_node]: raw=2.03 m, filtered=2.09 m
+[INFO] [1792759867.717735445] [sensor_node]: raw=1.78 m, filtered=1.82 m
+[INFO] [1792759868.717812330] [sensor_node]: raw=1.49 m, filtered=1.57 m
+[INFO] [1792759869.718497849] [sensor_node]: raw=1.22 m, filtered=1.32 m
+[INFO] [1792759870.818349733] [sensor_node]: raw=0.93 m, filtered=1.06 m
+[INFO] [1792759871.820066586] [sensor_node]: raw=0.72 m, filtered=0.82 m
+[INFO] [1792759872.833187978] [sensor_node]: raw=0.63 m, filtered=0.64 m
+[WARN] [1792759873.018340490] [sensor_node]: CRITICAL: filtered=0.60 m is below threshold 0.60 m
+[INFO] [1792759873.918350289] [sensor_node]: raw=0.38 m, filtered=0.45 m
+[WARN] [1792759874.118317501] [sensor_node]: CRITICAL: filtered=0.43 m is below threshold 0.60 m
+[INFO] [1792759874.918421968] [sensor_node]: raw=0.33 m, filtered=0.40 m
+[WARN] [1792759875.118658198] [sensor_node]: CRITICAL: filtered=0.38 m is below threshold 0.60 m
+[INFO] [1792759875.919069719] [sensor_node]: raw=0.42 m, filtered=0.41 m
+[WARN] [1792759876.218440776] [sensor_node]: CRITICAL: filtered=0.41 m is below threshold 0.60 m
+[INFO] [1792759877.018492565] [sensor_node]: raw=0.53 m, filtered=0.49 m
+[WARN] [1792759877.220708705] [sensor_node]: CRITICAL: filtered=0.50 m is below threshold 0.60 m
+[INFO] [1792759877.919432591] [sensor_node]: Value back to normal: filtered=0.62 m
+[INFO] [1792759878.118038180] [sensor_node]: raw=0.65 m, filtered=0.64 m
+[INFO] [1792759879.125226270] [sensor_node]: raw=0.93 m, filtered=0.83 m
+[INFO] [1792759880.219581557] [sensor_node]: raw=1.18 m, filtered=0.97 m
+[INFO] [1792759881.318215611] [sensor_node]: raw=1.50 m, filtered=1.41 m
+[INFO] [1792759882.318577285] [sensor_node]: raw=1.68 m, filtered=1.62 m
+[INFO] [1792759883.320002652] [sensor_node]: raw=2.00 m, filtered=1.88 m
+[INFO] [1792759884.417776987] [sensor_node]: raw=2.15 m, filtered=2.11 m
+[INFO] [1792759885.423017578] [sensor_node]: raw=2.34 m, filtered=2.27 m
+[INFO] [1792759886.518138704] [sensor_node]: raw=2.36 m, filtered=2.35 m
+[INFO] [1792759887.518216797] [sensor_node]: raw=2.38 m, filtered=2.38 m
+[INFO] [1792759888.520659924] [sensor_node]: raw=2.33 m, filtered=2.35 m
+[INFO] [1792759889.617794992] [sensor_node]: raw=2.19 m, filtered=1.92 m
+[INFO] [1792759890.618906490] [sensor_node]: raw=1.96 m, filtered=2.04 m
+[INFO] [1792759891.622147857] [sensor_node]: raw=1.73 m, filtered=1.85 m
+[INFO] [1792759892.625313455] [sensor_node]: raw=1.53 m, filtered=1.62 m
+[INFO] [1792759893.720995379] [sensor_node]: raw=1.23 m, filtered=1.32 m
+[INFO] [1792759894.818565759] [sensor_node]: raw=0.96 m, filtered=1.05 m
+[INFO] [1792759895.919146375] [sensor_node]: raw=0.78 m, filtered=0.82 m
+[INFO] [1792759896.921872185] [sensor_node]: raw=0.62 m, filtered=0.63 m
+[WARN] [1792759897.018528567] [sensor_node]: CRITICAL: filtered=0.60 m is below threshold 0.60 m
+[INFO] [1792759898.017898730] [sensor_node]: raw=0.40 m, filtered=0.45 m
+[WARN] [1792759898.118000606] [sensor_node]: CRITICAL: filtered=0.44 m is below threshold 0.60 m
+[INFO] [1792759899.018490080] [sensor_node]: raw=0.46 m, filtered=0.40 m
+[WARN] [1792759899.119504973] [sensor_node]: CRITICAL: filtered=0.39 m is below threshold 0.60 m
+[INFO] [1792759900.118702628] [sensor_node]: raw=0.47 m, filtered=0.43 m
+[WARN] [1792759900.218457980] [sensor_node]: CRITICAL: filtered=0.44 m is below threshold 0.60 m
+[INFO] [1792759901.121727514] [sensor_node]: raw=0.56 m, filtered=0.51 m
+[WARN] [1792759901.221264944] [sensor_node]: CRITICAL: filtered=0.53 m is below threshold 0.60 m
+[INFO] [1792759902.218039719] [sensor_node]: Value back to normal: filtered=0.66 m
+[INFO] [1792759902.218501570] [sensor_node]: raw=0.67 m, filtered=0.66 m
+[INFO] [1792759903.318187575] [sensor_node]: raw=0.91 m, filtered=0.86 m
+[INFO] [1792759904.318210016] [sensor_node]: raw=1.25 m, filtered=1.10 m
+[INFO] [1792759905.418294675] [sensor_node]: raw=1.46 m, filtered=1.40 m
+[INFO] [1792759906.517891348] [sensor_node]: raw=1.71 m, filtered=1.48 m
+[INFO] [1792759907.518102692] [sensor_node]: raw=2.00 m, filtered=1.92 m
+[INFO] [1792759908.618018204] [sensor_node]: raw=2.17 m, filtered=1.86 m
+[INFO] [1792759909.618158570] [sensor_node]: raw=2.32 m, filtered=2.29 m
+[INFO] [1792759910.717698595] [sensor_node]: raw=2.39 m, filtered=2.38 m
+[INFO] [1792759911.717747485] [sensor_node]: raw=2.42 m, filtered=2.40 m
+[INFO] [1792759912.818024818] [sensor_node]: raw=2.24 m, filtered=2.32 m
+[INFO] [1792759913.818336242] [sensor_node]: raw=2.12 m, filtered=2.19 m
+[INFO] [1792759914.818679833] [sensor_node]: raw=1.94 m, filtered=2.02 m
+[INFO] [1792759915.918095333] [sensor_node]: raw=1.67 m, filtered=1.78 m
+[INFO] [1792759917.017476457] [sensor_node]: raw=1.45 m, filtered=1.52 m
+[INFO] [1792759918.017737252] [sensor_node]: raw=1.19 m, filtered=1.27 m
+[INFO] [1792759919.017768069] [sensor_node]: raw=0.83 m, filtered=0.99 m
+[INFO] [1792759920.018547140] [sensor_node]: raw=0.74 m, filtered=0.77 m
+[WARN] [1792759921.117862431] [sensor_node]: CRITICAL: filtered=0.58 m is below threshold 0.60 m
+[INFO] [1792759921.118145992] [sensor_node]: raw=0.52 m, filtered=0.58 m
+[WARN] [1792759922.118023217] [sensor_node]: CRITICAL: filtered=0.47 m is below threshold 0.60 m
+[INFO] [1792759922.118305505] [sensor_node]: raw=0.44 m, filtered=0.47 m
+[WARN] [1792759923.217652314] [sensor_node]: CRITICAL: filtered=0.39 m is below threshold 0.60 m
+[INFO] [1792759923.217919101] [sensor_node]: raw=0.35 m, filtered=0.39 m
+[WARN] [1792759924.218010981] [sensor_node]: CRITICAL: filtered=0.40 m is below threshold 0.60 m
+[INFO] [1792759924.218277367] [sensor_node]: raw=0.52 m, filtered=0.40 m
+[WARN] [1792759925.218030759] [sensor_node]: CRITICAL: filtered=0.50 m is below threshold 0.60 m
+[INFO] [1792759925.218525043] [sensor_node]: raw=0.59 m, filtered=0.50 m
+[INFO] [1792759925.817875194] [sensor_node]: Value back to normal: filtered=0.61 m
+[INFO] [1792759926.317943599] [sensor_node]: raw=0.87 m, filtered=0.68 m
+[INFO] [1792759927.417906529] [sensor_node]: raw=0.97 m, filtered=0.88 m
+[INFO] [1792759928.517901711] [sensor_node]: raw=1.26 m, filtered=1.16 m
+[INFO] [1792759929.518138253] [sensor_node]: raw=1.52 m, filtered=1.25 m
+[INFO] [1792759930.618129560] [sensor_node]: raw=1.76 m, filtered=1.68 m
+[INFO] [1792759931.717584844] [sensor_node]: raw=2.01 m, filtered=1.95 m
+[INFO] [1792759932.717937295] [sensor_node]: raw=2.27 m, filtered=2.19 m
+[INFO] [1792759933.818091557] [sensor_node]: raw=2.37 m, filtered=2.30 m
+[INFO] [1792759934.917829717] [sensor_node]: raw=2.47 m, filtered=2.39 m
+[INFO] [1792759935.917985697] [sensor_node]: raw=2.39 m, filtered=2.40 m
+[INFO] [1792759937.017821430] [sensor_node]: raw=2.34 m, filtered=2.29 m
+[INFO] [1792759938.018015410] [sensor_node]: raw=2.13 m, filtered=2.17 m
+[INFO] [1792759939.018270050] [sensor_node]: raw=0.10 m, filtered=1.45 m
+[INFO] [1792759940.117485936] [sensor_node]: raw=1.59 m, filtered=1.48 m
+[INFO] [1792759941.117682004] [sensor_node]: raw=1.36 m, filtered=1.29 m
+[INFO] [1792759942.118232307] [sensor_node]: raw=1.15 m, filtered=1.24 m
+[INFO] [1792759943.118479667] [sensor_node]: raw=0.80 m, filtered=0.95 m
+[INFO] [1792759944.119051366] [sensor_node]: raw=0.64 m, filtered=0.73 m
+[WARN] [1792759945.117736791] [sensor_node]: CRITICAL: filtered=0.58 m is below threshold 0.60 m
+[INFO] [1792759945.218602022] [sensor_node]: raw=0.14 m, filtered=0.51 m
+[WARN] [1792759946.118484754] [sensor_node]: CRITICAL: filtered=0.43 m is below threshold 0.60 m
+[INFO] [1792759946.318696820] [sensor_node]: raw=0.51 m, filtered=0.44 m
+[WARN] [1792759947.217752420] [sensor_node]: CRITICAL: filtered=0.34 m is below threshold 0.60 m
+[INFO] [1792759947.418638633] [sensor_node]: raw=0.11 m, filtered=0.34 m
+[WARN] [1792759948.218089251] [sensor_node]: CRITICAL: filtered=0.42 m is below threshold 0.60 m
+[INFO] [1792759948.518526968] [sensor_node]: raw=0.42 m, filtered=0.44 m
+[WARN] [1792759949.318205835] [sensor_node]: CRITICAL: filtered=0.51 m is below threshold 0.60 m
+[INFO] [1792759949.618325219] [sensor_node]: raw=0.60 m, filtered=0.56 m
+[INFO] [1792759950.018356818] [sensor_node]: Value back to normal: filtered=0.62 m
+[WARN] [1792759950.318313347] [sensor_node]: CRITICAL: filtered=0.59 m is below threshold 0.60 m
+[INFO] [1792759950.418363400] [sensor_node]: Value back to normal: filtered=0.61 m
+[INFO] [1792759950.718009885] [sensor_node]: raw=0.81 m, filtered=0.67 m
+[INFO] [1792759951.817559590] [sensor_node]: raw=1.02 m, filtered=0.98 m
+[INFO] [1792759952.818124069] [sensor_node]: raw=1.34 m, filtered=1.27 m
+[INFO] [1792759953.918214187] [sensor_node]: raw=1.61 m, filtered=1.54 m
+[INFO] [1792759954.918270123] [sensor_node]: raw=1.83 m, filtered=1.76 m
+[INFO] [1792759956.018739205] [sensor_node]: raw=2.10 m, filtered=2.04 m
+[INFO] [1792759957.118119893] [sensor_node]: raw=2.23 m, filtered=2.22 m
+[INFO] [1792759958.218635827] [sensor_node]: raw=2.35 m, filtered=2.36 m
+[INFO] [1792759959.317730474] [sensor_node]: raw=0.19 m, filtered=2.07 m
+[INFO] [1792759960.318230308] [sensor_node]: raw=2.38 m, filtered=2.40 m
+[INFO] [1792759961.318472146] [sensor_node]: raw=2.24 m, filtered=2.29 m
+[INFO] [1792759962.418319053] [sensor_node]: raw=2.05 m, filtered=2.11 m
+[INFO] [1792759963.517688175] [sensor_node]: raw=1.83 m, filtered=1.89 m
+[INFO] [1792759964.517717313] [sensor_node]: raw=1.50 m, filtered=1.64 m
+[INFO] [1792759965.619009711] [sensor_node]: raw=1.27 m, filtered=1.34 m
+[INFO] [1792759966.717735674] [sensor_node]: raw=0.99 m, filtered=1.08 m
+[INFO] [1792759967.718083383] [sensor_node]: raw=0.80 m, filtered=0.86 m
+[INFO] [1792759968.718226042] [sensor_node]: raw=0.63 m, filtered=0.65 m
+[WARN] [1792759969.018576943] [sensor_node]: CRITICAL: filtered=0.59 m is below threshold 0.60 m
+[INFO] [1792759969.719075904] [sensor_node]: raw=0.55 m, filtered=0.54 m
+[WARN] [1792759970.118017384] [sensor_node]: CRITICAL: filtered=0.45 m is below threshold 0.60 m
+[INFO] [1792759970.818646603] [sensor_node]: raw=0.40 m, filtered=0.42 m
+[WARN] [1792759971.118066365] [sensor_node]: CRITICAL: filtered=0.40 m is below threshold 0.60 m
+[INFO] [1792759971.917897862] [sensor_node]: raw=0.34 m, filtered=0.40 m
+[WARN] [1792759972.118366864] [sensor_node]: CRITICAL: filtered=0.41 m is below threshold 0.60 m
+[INFO] [1792759972.918341885] [sensor_node]: raw=0.52 m, filtered=0.49 m
+[WARN] [1792759973.217707635] [sensor_node]: CRITICAL: filtered=0.51 m is below threshold 0.60 m
+[INFO] [1792759974.018030293] [sensor_node]: Value back to normal: filtered=0.62 m
+[INFO] [1792759974.018414342] [sensor_node]: raw=0.72 m, filtered=0.62 m
+[INFO] [1792759975.118047643] [sensor_node]: raw=0.89 m, filtered=0.83 m
+[INFO] [1792759976.218459631] [sensor_node]: raw=1.15 m, filtered=0.83 m
+[INFO] [1792759977.317981785] [sensor_node]: raw=1.51 m, filtered=1.40 m
+[INFO] [1792759978.417947363] [sensor_node]: raw=1.74 m, filtered=1.63 m
+[INFO] [1792759979.518228672] [sensor_node]: raw=2.04 m, filtered=1.92 m
+[INFO] [1792759980.518284903] [sensor_node]: raw=2.19 m, filtered=2.15 m
+[INFO] [1792759981.518645950] [sensor_node]: raw=2.30 m, filtered=2.27 m
+[INFO] [1792759982.617548818] [sensor_node]: raw=2.35 m, filtered=2.35 m
+[INFO] [1792759983.618036709] [sensor_node]: raw=2.36 m, filtered=2.39 m
+[INFO] [1792759984.717796568] [sensor_node]: raw=2.26 m, filtered=2.32 m
+[INFO] [1792759985.718160357] [sensor_node]: raw=2.18 m, filtered=2.20 m
+[INFO] [1792759986.718406017] [sensor_node]: raw=1.91 m, filtered=2.05 m
+[INFO] [1792759987.718875773] [sensor_node]: raw=1.78 m, filtered=1.85 m
+[INFO] [1792759988.817658962] [sensor_node]: raw=1.46 m, filtered=1.53 m
+[INFO] [1792759989.917530037] [sensor_node]: raw=1.15 m, filtered=1.27 m
+[INFO] [1792759990.917914294] [sensor_node]: raw=0.88 m, filtered=1.00 m
+[INFO] [1792759991.918330602] [sensor_node]: raw=0.70 m, filtered=0.78 m
+[WARN] [1792759992.818372336] [sensor_node]: CRITICAL: filtered=0.60 m is below threshold 0.60 m
+[INFO] [1792759992.918815228] [sensor_node]: raw=0.12 m, filtered=0.53 m
+[WARN] [1792759993.819454676] [sensor_node]: CRITICAL: filtered=0.47 m is below threshold 0.60 m
+[INFO] [1792759993.919063760] [sensor_node]: raw=0.44 m, filtered=0.46 m
+[WARN] [1792759994.824859070] [sensor_node]: CRITICAL: filtered=0.41 m is below threshold 0.60 m
+[INFO] [1792759994.920813589] [sensor_node]: raw=0.35 m, filtered=0.39 m
+[WARN] [1792759995.919735597] [sensor_node]: CRITICAL: filtered=0.41 m is below threshold 0.60 m
+[INFO] [1792759996.022029939] [sensor_node]: raw=0.34 m, filtered=0.41 m
+[WARN] [1792759996.923336537] [sensor_node]: CRITICAL: filtered=0.49 m is below threshold 0.60 m
+[INFO] [1792759997.120074326] [sensor_node]: raw=0.19 m, filtered=0.46 m
+[INFO] [1792759997.920833642] [sensor_node]: Value back to normal: filtered=0.61 m
+[WARN] [1792759998.118356543] [sensor_node]: CRITICAL: filtered=0.56 m is below threshold 0.60 m
+[INFO] [1792759998.222562997] [sensor_node]: raw=0.79 m, filtered=0.58 m
+[INFO] [1792759998.320415544] [sensor_node]: Value back to normal: filtered=0.61 m
+[INFO] [1792759998.718610633] [sensor_node]: Value back to normal: filtered=0.61 m
+[INFO] [1792759999.223925636] [sensor_node]: raw=0.93 m, filtered=0.87 m
+[INFO] [1792760000.318083563] [sensor_node]: raw=1.25 m, filtered=1.00 m
+[INFO] [1792760001.319105505] [sensor_node]: raw=1.46 m, filtered=1.37 m
+[INFO] [1792760002.324105807] [sensor_node]: raw=1.73 m, filtered=1.62 m
+[INFO] [1792760003.419797065] [sensor_node]: raw=1.94 m, filtered=1.87 m
+[INFO] [1792760004.422299851] [sensor_node]: raw=2.20 m, filtered=2.10 m
+[INFO] [1792760005.520626423] [sensor_node]: raw=2.32 m, filtered=2.29 m
+[INFO] [1792760006.618341920] [sensor_node]: raw=2.35 m, filtered=2.37 m
+[INFO] [1792760007.718266898] [sensor_node]: raw=2.39 m, filtered=2.37 m
+[INFO] [1792760008.724015119] [sensor_node]: raw=2.39 m, filtered=2.33 m
+[INFO] [1792760009.724272960] [sensor_node]: raw=2.26 m, filtered=2.21 m
+[INFO] [1792760010.826308796] [sensor_node]: raw=1.95 m, filtered=2.02 m
+[INFO] [1792760011.918697109] [sensor_node]: raw=1.69 m, filtered=1.82 m
+[INFO] [1792760012.920642208] [sensor_node]: raw=1.41 m, filtered=1.54 m
+[INFO] [1792760014.019191507] [sensor_node]: raw=1.13 m, filtered=1.23 m
+[INFO] [1792760015.121139622] [sensor_node]: raw=0.90 m, filtered=0.83 m
+[INFO] [1792760016.218087459] [sensor_node]: raw=0.67 m, filtered=0.73 m
+[INFO] [1792760016.875111228] [sensor_node]: Sensor Node stopped

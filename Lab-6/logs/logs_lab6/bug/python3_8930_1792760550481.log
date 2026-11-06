@@ -1,0 +1,51 @@
+[INFO] [1792760550.538318020] [monitor_node]: Monitor Node started: heartbeat_timeout=2.5 s, data_timeout=2.5 s, expected_rate=10.0 Hz
+[WARN] [1792760551.524948921] [monitor_node]: Data unstable: rate 0.0 Hz (expected 10.0 Hz)
+[WARN] [1792760552.524610672] [monitor_node]: Data unstable: rate 0.0 Hz (expected 10.0 Hz)
+[ERROR] [1792760553.525044344] [monitor_node]: No data on /sensor_data for 3.0 s, but heartbeat is alive
+[INFO] [1792760553.525857554] [monitor_node]: Status changed: WARN -> ERROR
+[ERROR] [1792760554.523485153] [monitor_node]: No data on /sensor_data for 4.0 s, but heartbeat is alive
+[ERROR] [1792760555.524125721] [monitor_node]: No data on /sensor_data for 5.0 s, but heartbeat is alive
+[ERROR] [1792760556.522485195] [monitor_node]: No data on /sensor_data for 6.0 s, but heartbeat is alive
+[ERROR] [1792760557.523339324] [monitor_node]: No data on /sensor_data for 7.0 s, but heartbeat is alive
+[ERROR] [1792760558.523104472] [monitor_node]: No data on /sensor_data for 8.0 s, but heartbeat is alive
+[ERROR] [1792760559.523345590] [monitor_node]: No data on /sensor_data for 9.0 s, but heartbeat is alive
+[ERROR] [1792760560.523065381] [monitor_node]: No data on /sensor_data for 10.0 s, but heartbeat is alive
+[ERROR] [1792760561.522386033] [monitor_node]: No data on /sensor_data for 11.0 s, but heartbeat is alive
+[ERROR] [1792760562.523108265] [monitor_node]: No data on /sensor_data for 12.0 s, but heartbeat is alive
+[ERROR] [1792760563.522912186] [monitor_node]: No data on /sensor_data for 13.0 s, but heartbeat is alive
+[ERROR] [1792760564.522857014] [monitor_node]: No data on /sensor_data for 14.0 s, but heartbeat is alive
+[ERROR] [1792760565.522956524] [monitor_node]: No data on /sensor_data for 15.0 s, but heartbeat is alive
+[ERROR] [1792760566.522714015] [monitor_node]: No data on /sensor_data for 16.0 s, but heartbeat is alive
+[ERROR] [1792760567.522596858] [monitor_node]: No data on /sensor_data for 17.0 s, but heartbeat is alive
+[ERROR] [1792760568.524053864] [monitor_node]: No data on /sensor_data for 18.0 s, but heartbeat is alive
+[ERROR] [1792760569.522862698] [monitor_node]: No data on /sensor_data for 19.0 s, but heartbeat is alive
+[ERROR] [1792760570.522657553] [monitor_node]: No data on /sensor_data for 20.0 s, but heartbeat is alive
+[ERROR] [1792760571.522941227] [monitor_node]: No data on /sensor_data for 21.0 s, but heartbeat is alive
+[ERROR] [1792760572.523736079] [monitor_node]: No data on /sensor_data for 22.0 s, but heartbeat is alive
+[ERROR] [1792760573.522364307] [monitor_node]: No data on /sensor_data for 23.0 s, but heartbeat is alive
+[ERROR] [1792760574.523602536] [monitor_node]: No data on /sensor_data for 24.0 s, but heartbeat is alive
+[ERROR] [1792760575.522508003] [monitor_node]: No data on /sensor_data for 25.0 s, but heartbeat is alive
+[ERROR] [1792760576.522390186] [monitor_node]: No data on /sensor_data for 26.0 s, but heartbeat is alive
+[ERROR] [1792760577.522559669] [monitor_node]: No data on /sensor_data for 27.0 s, but heartbeat is alive
+[ERROR] [1792760578.522835744] [monitor_node]: No data on /sensor_data for 28.0 s, but heartbeat is alive
+[ERROR] [1792760579.522338242] [monitor_node]: No data on /sensor_data for 29.0 s, but heartbeat is alive
+[ERROR] [1792760580.522605397] [monitor_node]: No data on /sensor_data for 30.0 s, but heartbeat is alive
+[ERROR] [1792760581.523355435] [monitor_node]: No data on /sensor_data for 31.0 s, but heartbeat is alive
+[ERROR] [1792760582.522798741] [monitor_node]: No data on /sensor_data for 32.0 s, but heartbeat is alive
+[ERROR] [1792760583.523184740] [monitor_node]: No data on /sensor_data for 33.0 s, but heartbeat is alive
+[ERROR] [1792760584.524021790] [monitor_node]: No data on /sensor_data for 34.0 s, but heartbeat is alive
+[ERROR] [1792760585.522465124] [monitor_node]: No data on /sensor_data for 35.0 s, but heartbeat is alive
+[ERROR] [1792760586.523666667] [monitor_node]: No data on /sensor_data for 36.0 s, but heartbeat is alive
+[ERROR] [1792760587.522873742] [monitor_node]: No data on /sensor_data for 37.0 s, but heartbeat is alive
+[ERROR] [1792760588.522731889] [monitor_node]: No data on /sensor_data for 38.0 s, but heartbeat is alive
+[ERROR] [1792760589.523659416] [monitor_node]: No data on /sensor_data for 39.0 s, but heartbeat is alive
+[ERROR] [1792760590.524264537] [monitor_node]: No data on /sensor_data for 40.0 s, but heartbeat is alive
+[ERROR] [1792760591.523436908] [monitor_node]: No data on /sensor_data for 41.0 s, but heartbeat is alive
+[ERROR] [1792760592.524705445] [monitor_node]: No data on /sensor_data for 42.0 s, but heartbeat is alive
+[ERROR] [1792760593.522576235] [monitor_node]: No data on /sensor_data for 43.0 s, but heartbeat is alive
+[ERROR] [1792760594.523298741] [monitor_node]: No data on /sensor_data for 44.0 s, but heartbeat is alive
+[ERROR] [1792760595.522682797] [monitor_node]: No data on /sensor_data for 45.0 s, but heartbeat is alive
+[ERROR] [1792760596.522343252] [monitor_node]: No data on /sensor_data for 46.0 s, but heartbeat is alive
+[ERROR] [1792760597.522922520] [monitor_node]: No data on /sensor_data for 47.0 s, but heartbeat is alive
+[ERROR] [1792760598.523054476] [monitor_node]: No data on /sensor_data for 48.0 s, but heartbeat is alive
+[ERROR] [1792760599.522408048] [monitor_node]: No data on /sensor_data for 49.0 s, but heartbeat is alive

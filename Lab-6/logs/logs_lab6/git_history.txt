@@ -1,0 +1,3239 @@
+commit edc302097f5cc1f4d0f64d5c0535e96b10a3c71d
+Author: Tokar A <tokar.anastasia75@gmail.com>
+Date:   Fri Oct 23 16:04:57 2026 +0300
+
+    Revert "Bug: typo in sensor topic"
+    
+    This reverts commit d5790a0af2c299359262ae45fd5255f0b3505be4.
+---
+ sensor_pkg/sensor_pkg/sensor_node.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sensor_pkg/sensor_pkg/sensor_node.py b/sensor_pkg/sensor_pkg/sensor_node.py
+index 92ca154..dffae39 100644
+--- a/sensor_pkg/sensor_pkg/sensor_node.py
++++ b/sensor_pkg/sensor_pkg/sensor_node.py
+@@ -25,7 +25,7 @@ class SensorNode(Node):
+         self.spike_probability = self.get_parameter('spike_probability').value
+         self.period = self.get_parameter('period').value
+ 
+-        self.raw_pub = self.create_publisher(Float32, '/sensors_data', 10)
++        self.raw_pub = self.create_publisher(Float32, '/sensor_data', 10)
+         self.filtered_pub = self.create_publisher(Float32, '/sensor_data_filtered', 10)
+         self.alarm_pub = self.create_publisher(Bool, '/sensor_alarm', 10)
+         self.heartbeat_pub = self.create_publisher(String, '/heartbeat', 10)
+
+commit d5790a0af2c299359262ae45fd5255f0b3505be4
+Author: Tokar A <tokar.anastasia75@gmail.com>
+Date:   Fri Oct 23 16:03:27 2026 +0300
+
+    Bug: typo in sensor topic
+---
+ sensor_pkg/sensor_pkg/sensor_node.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sensor_pkg/sensor_pkg/sensor_node.py b/sensor_pkg/sensor_pkg/sensor_node.py
+index dffae39..92ca154 100644
+--- a/sensor_pkg/sensor_pkg/sensor_node.py
++++ b/sensor_pkg/sensor_pkg/sensor_node.py
+@@ -25,7 +25,7 @@ class SensorNode(Node):
+         self.spike_probability = self.get_parameter('spike_probability').value
+         self.period = self.get_parameter('period').value
+ 
+-        self.raw_pub = self.create_publisher(Float32, '/sensor_data', 10)
++        self.raw_pub = self.create_publisher(Float32, '/sensors_data', 10)
+         self.filtered_pub = self.create_publisher(Float32, '/sensor_data_filtered', 10)
+         self.alarm_pub = self.create_publisher(Bool, '/sensor_alarm', 10)
+         self.heartbeat_pub = self.create_publisher(String, '/heartbeat', 10)
+
+commit e37c91fc1163299e35f4ab6eae4c14e4d67a6ce1
+Author: Tokar A <tokar.anastasia75@gmail.com>
+Date:   Fri Oct 23 16:01:06 2026 +0300
+
+    Stable version
+---
+ .gitignore                                       |   3 +
+ lab1_pubsub/LICENSE                              | 202 ++++++++++++++++++
+ lab1_pubsub/lab1_pubsub/__init__.py              |   0
+ lab1_pubsub/lab1_pubsub/publisher_node.py        |  37 ++++
+ lab1_pubsub/lab1_pubsub/subscriber_node.py       |  32 +++
+ lab1_pubsub/package.xml                          |  22 ++
+ lab1_pubsub/resource/lab1_pubsub                 |   0
+ lab1_pubsub/setup.cfg                            |   4 +
+ lab1_pubsub/setup.py                             |  32 +++
+ lab1_pubsub/test/test_copyright.py               |  25 +++
+ lab1_pubsub/test/test_flake8.py                  |  25 +++
+ lab1_pubsub/test/test_pep257.py                  |  23 ++
+ monitor_pkg/LICENSE                              | 202 ++++++++++++++++++
+ monitor_pkg/monitor_pkg/__init__.py              |   0
+ monitor_pkg/monitor_pkg/monitor_node.py          |  96 +++++++++
+ monitor_pkg/package.xml                          |  21 ++
+ monitor_pkg/resource/monitor_pkg                 |   0
+ monitor_pkg/setup.cfg                            |   4 +
+ monitor_pkg/setup.py                             |  30 +++
+ monitor_pkg/test/test_copyright.py               |  25 +++
+ monitor_pkg/test/test_flake8.py                  |  25 +++
+ monitor_pkg/test/test_pep257.py                  |  23 ++
+ motion_control/LICENSE                           | 202 ++++++++++++++++++
+ motion_control/motion_control/__init__.py        |   0
+ motion_control/motion_control/motion_node.py     |  94 +++++++++
+ motion_control/package.xml                       |  22 ++
+ motion_control/resource/motion_control           |   0
+ motion_control/setup.cfg                         |   4 +
+ motion_control/setup.py                          |  30 +++
+ motion_control/test/test_copyright.py            |  25 +++
+ motion_control/test/test_flake8.py               |  25 +++
+ motion_control/test/test_pep257.py               |  23 ++
+ record_playback/LICENSE                          | 202 ++++++++++++++++++
+ record_playback/package.xml                      |  21 ++
+ record_playback/record_playback/__init__.py      |   0
+ record_playback/record_playback/playback_node.py | 100 +++++++++
+ record_playback/record_playback/record_node.py   |  61 ++++++
+ record_playback/resource/record_playback         |   0
+ record_playback/setup.cfg                        |   4 +
+ record_playback/setup.py                         |  31 +++
+ record_playback/test/test_copyright.py           |  25 +++
+ record_playback/test/test_flake8.py              |  25 +++
+ record_playback/test/test_pep257.py              |  23 ++
+ robot_gui/LICENSE                                | 202 ++++++++++++++++++
+ robot_gui/package.xml                            |  23 ++
+ robot_gui/resource/robot_gui                     |   0
+ robot_gui/robot_gui/__init__.py                  |   0
+ robot_gui/robot_gui/gui_node.py                  | 256 +++++++++++++++++++++++
+ robot_gui/setup.cfg                              |   4 +
+ robot_gui/setup.py                               |  30 +++
+ robot_gui/test/test_copyright.py                 |  25 +++
+ robot_gui/test/test_flake8.py                    |  25 +++
+ robot_gui/test/test_pep257.py                    |  23 ++
+ sensor_pkg/LICENSE                               | 202 ++++++++++++++++++
+ sensor_pkg/package.xml                           |  21 ++
+ sensor_pkg/resource/sensor_pkg                   |   0
+ sensor_pkg/sensor_pkg/__init__.py                |   0
+ sensor_pkg/sensor_pkg/sensor_node.py             | 111 ++++++++++
+ sensor_pkg/setup.cfg                             |   4 +
+ sensor_pkg/setup.py                              |  30 +++
+ sensor_pkg/test/test_copyright.py                |  25 +++
+ sensor_pkg/test/test_flake8.py                   |  25 +++
+ sensor_pkg/test/test_pep257.py                   |  23 ++
+ 63 files changed, 2777 insertions(+)
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..9f7983e
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,3 @@
++__pycache__/
++*.pyc
++*.egg-info/
+diff --git a/lab1_pubsub/LICENSE b/lab1_pubsub/LICENSE
+new file mode 100644
+index 0000000..d645695
+--- /dev/null
++++ b/lab1_pubsub/LICENSE
+@@ -0,0 +1,202 @@
++
++                                 Apache License
++                           Version 2.0, January 2004
++                        http://www.apache.org/licenses/
++
++   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
++
++   1. Definitions.
++
++      "License" shall mean the terms and conditions for use, reproduction,
++      and distribution as defined by Sections 1 through 9 of this document.
++
++      "Licensor" shall mean the copyright owner or entity authorized by
++      the copyright owner that is granting the License.
++
++      "Legal Entity" shall mean the union of the acting entity and all
++      other entities that control, are controlled by, or are under common
++      control with that entity. For the purposes of this definition,
++      "control" means (i) the power, direct or indirect, to cause the
++      direction or management of such entity, whether by contract or
++      otherwise, or (ii) ownership of fifty percent (50%) or more of the
++      outstanding shares, or (iii) beneficial ownership of such entity.
++
++      "You" (or "Your") shall mean an individual or Legal Entity
++      exercising permissions granted by this License.
++
++      "Source" form shall mean the preferred form for making modifications,
++      including but not limited to software source code, documentation
++      source, and configuration files.
++
++      "Object" form shall mean any form resulting from mechanical
++      transformation or translation of a Source form, including but
++      not limited to compiled object code, generated documentation,
++      and conversions to other media types.
++
++      "Work" shall mean the work of authorship, whether in Source or
++      Object form, made available under the License, as indicated by a
++      copyright notice that is included in or attached to the work
++      (an example is provided in the Appendix below).
++
++      "Derivative Works" shall mean any work, whether in Source or Object
++      form, that is based on (or derived from) the Work and for which the
++      editorial revisions, annotations, elaborations, or other modifications
++      represent, as a whole, an original work of authorship. For the purposes
++      of this License, Derivative Works shall not include works that remain
++      separable from, or merely link (or bind by name) to the interfaces of,
++      the Work and Derivative Works thereof.
++
++      "Contribution" shall mean any work of authorship, including
++      the original version of the Work and any modifications or additions
++      to that Work or Derivative Works thereof, that is intentionally
++      submitted to Licensor for inclusion in the Work by the copyright owner
++      or by an individual or Legal Entity authorized to submit on behalf of
++      the copyright owner. For the purposes of this definition, "submitted"
++      means any form of electronic, verbal, or written communication sent
++      to the Licensor or its representatives, including but not limited to
++      communication on electronic mailing lists, source code control systems,
++      and issue tracking systems that are managed by, or on behalf of, the
++      Licensor for the purpose of discussing and improving the Work, but
++      excluding communication that is conspicuously marked or otherwise
++      designated in writing by the copyright owner as "Not a Contribution."
++
++      "Contributor" shall mean Licensor and any individual or Legal Entity
++      on behalf of whom a Contribution has been received by Licensor and
++      subsequently incorporated within the Work.
++
++   2. Grant of Copyright License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      copyright license to reproduce, prepare Derivative Works of,
++      publicly display, publicly perform, sublicense, and distribute the
++      Work and such Derivative Works in Source or Object form.
++
++   3. Grant of Patent License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      (except as stated in this section) patent license to make, have made,
++      use, offer to sell, sell, import, and otherwise transfer the Work,
++      where such license applies only to those patent claims licensable
++      by such Contributor that are necessarily infringed by their
++      Contribution(s) alone or by combination of their Contribution(s)
++      with the Work to which such Contribution(s) was submitted. If You
++      institute patent litigation against any entity (including a
++      cross-claim or counterclaim in a lawsuit) alleging that the Work
++      or a Contribution incorporated within the Work constitutes direct
++      or contributory patent infringement, then any patent licenses
++      granted to You under this License for that Work shall terminate
++      as of the date such litigation is filed.
++
++   4. Redistribution. You may reproduce and distribute copies of the
++      Work or Derivative Works thereof in any medium, with or without
++      modifications, and in Source or Object form, provided that You
++      meet the following conditions:
++
++      (a) You must give any other recipients of the Work or
++          Derivative Works a copy of this License; and
++
++      (b) You must cause any modified files to carry prominent notices
++          stating that You changed the files; and
++
++      (c) You must retain, in the Source form of any Derivative Works
++          that You distribute, all copyright, patent, trademark, and
++          attribution notices from the Source form of the Work,
++          excluding those notices that do not pertain to any part of
++          the Derivative Works; and
++
++      (d) If the Work includes a "NOTICE" text file as part of its
++          distribution, then any Derivative Works that You distribute must
++          include a readable copy of the attribution notices contained
++          within such NOTICE file, excluding those notices that do not
++          pertain to any part of the Derivative Works, in at least one
++          of the following places: within a NOTICE text file distributed
++          as part of the Derivative Works; within the Source form or
++          documentation, if provided along with the Derivative Works; or,
++          within a display generated by the Derivative Works, if and
++          wherever such third-party notices normally appear. The contents
++          of the NOTICE file are for informational purposes only and
++          do not modify the License. You may add Your own attribution
++          notices within Derivative Works that You distribute, alongside
++          or as an addendum to the NOTICE text from the Work, provided
++          that such additional attribution notices cannot be construed
++          as modifying the License.
++
++      You may add Your own copyright statement to Your modifications and
++      may provide additional or different license terms and conditions
++      for use, reproduction, or distribution of Your modifications, or
++      for any such Derivative Works as a whole, provided Your use,
++      reproduction, and distribution of the Work otherwise complies with
++      the conditions stated in this License.
++
++   5. Submission of Contributions. Unless You explicitly state otherwise,
++      any Contribution intentionally submitted for inclusion in the Work
++      by You to the Licensor shall be under the terms and conditions of
++      this License, without any additional terms or conditions.
++      Notwithstanding the above, nothing herein shall supersede or modify
++      the terms of any separate license agreement you may have executed
++      with Licensor regarding such Contributions.
++
++   6. Trademarks. This License does not grant permission to use the trade
++      names, trademarks, service marks, or product names of the Licensor,
++      except as required for reasonable and customary use in describing the
++      origin of the Work and reproducing the content of the NOTICE file.
++
++   7. Disclaimer of Warranty. Unless required by applicable law or
++      agreed to in writing, Licensor provides the Work (and each
++      Contributor provides its Contributions) on an "AS IS" BASIS,
++      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++      implied, including, without limitation, any warranties or conditions
++      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
++      PARTICULAR PURPOSE. You are solely responsible for determining the
++      appropriateness of using or redistributing the Work and assume any
++      risks associated with Your exercise of permissions under this License.
++
++   8. Limitation of Liability. In no event and under no legal theory,
++      whether in tort (including negligence), contract, or otherwise,
++      unless required by applicable law (such as deliberate and grossly
++      negligent acts) or agreed to in writing, shall any Contributor be
++      liable to You for damages, including any direct, indirect, special,
++      incidental, or consequential damages of any character arising as a
++      result of this License or out of the use or inability to use the
++      Work (including but not limited to damages for loss of goodwill,
++      work stoppage, computer failure or malfunction, or any and all
++      other commercial damages or losses), even if such Contributor
++      has been advised of the possibility of such damages.
++
++   9. Accepting Warranty or Additional Liability. While redistributing
++      the Work or Derivative Works thereof, You may choose to offer,
++      and charge a fee for, acceptance of support, warranty, indemnity,
++      or other liability obligations and/or rights consistent with this
++      License. However, in accepting such obligations, You may act only
++      on Your own behalf and on Your sole responsibility, not on behalf
++      of any other Contributor, and only if You agree to indemnify,
++      defend, and hold each Contributor harmless for any liability
++      incurred by, or claims asserted against, such Contributor by reason
++      of your accepting any such warranty or additional liability.
++
++   END OF TERMS AND CONDITIONS
++
++   APPENDIX: How to apply the Apache License to your work.
++
++      To apply the Apache License to your work, attach the following
++      boilerplate notice, with the fields enclosed by brackets "[]"
++      replaced with your own identifying information. (Don't include
++      the brackets!)  The text should be enclosed in the appropriate
++      comment syntax for the file format. We also recommend that a
++      file or class name and description of purpose be included on the
++      same "printed page" as the copyright notice for easier
++      identification within third-party archives.
++
++   Copyright [yyyy] [name of copyright owner]
++
++   Licensed under the Apache License, Version 2.0 (the "License");
++   you may not use this file except in compliance with the License.
++   You may obtain a copy of the License at
++
++       http://www.apache.org/licenses/LICENSE-2.0
++
++   Unless required by applicable law or agreed to in writing, software
++   distributed under the License is distributed on an "AS IS" BASIS,
++   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++   See the License for the specific language governing permissions and
++   limitations under the License.
+diff --git a/lab1_pubsub/lab1_pubsub/__init__.py b/lab1_pubsub/lab1_pubsub/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/lab1_pubsub/lab1_pubsub/publisher_node.py b/lab1_pubsub/lab1_pubsub/publisher_node.py
+new file mode 100644
+index 0000000..daf2e72
+--- /dev/null
++++ b/lab1_pubsub/lab1_pubsub/publisher_node.py
+@@ -0,0 +1,37 @@
++import rclpy
++from rclpy.node import Node
++from std_msgs.msg import String
++
++
++class Lab1Publisher(Node):
++
++    def __init__(self):
++        super().__init__('lab1_publisher')
++        self.publisher_ = self.create_publisher(String, 'lab1_topic', 10)
++        # Таймер з періодом 1 с — публікація 1 раз на секунду
++        self.timer = self.create_timer(1.0, self.timer_callback)
++        self.count = 0
++
++    def timer_callback(self):
++        msg = String()
++        msg.data = f'Hello from Lab1! Message #{self.count}'
++        self.publisher_.publish(msg)
++        self.get_logger().info(f'Publishing: "{msg.data}"')
++        self.count += 1
++
++
++def main(args=None):
++    rclpy.init(args=args)
++    node = Lab1Publisher()
++    try:
++        rclpy.spin(node)
++    except KeyboardInterrupt:
++        pass
++    finally:
++        node.destroy_node()
++        if rclpy.ok():
++            rclpy.shutdown()
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/lab1_pubsub/lab1_pubsub/subscriber_node.py b/lab1_pubsub/lab1_pubsub/subscriber_node.py
+new file mode 100644
+index 0000000..93be808
+--- /dev/null
++++ b/lab1_pubsub/lab1_pubsub/subscriber_node.py
+@@ -0,0 +1,32 @@
++import rclpy
++from rclpy.node import Node
++from std_msgs.msg import String
++
++
++class Lab1Subscriber(Node):
++
++    def __init__(self):
++        super().__init__('lab1_subscriber')
++        # Підписка на той самий топік, у який публікує Publisher
++        self.subscription = self.create_subscription(
++            String, 'lab1_topic', self.listener_callback, 10)
++
++    def listener_callback(self, msg):
++        self.get_logger().info(f'I heard: "{msg.data}"')
++
++
++def main(args=None):
++    rclpy.init(args=args)
++    node = Lab1Subscriber()
++    try:
++        rclpy.spin(node)
++    except KeyboardInterrupt:
++        pass
++    finally:
++        node.destroy_node()
++        if rclpy.ok():
++            rclpy.shutdown()
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/lab1_pubsub/package.xml b/lab1_pubsub/package.xml
+new file mode 100644
+index 0000000..9a8fd37
+--- /dev/null
++++ b/lab1_pubsub/package.xml
+@@ -0,0 +1,22 @@
++<?xml version="1.0"?>
++<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
++<package format="3">
++  <name>lab1_pubsub</name>
++  <version>0.0.0</version>
++  <description>TODO: Package description</description>
++  <maintainer email="tokar@todo.todo">tokar</maintainer>
++  <license>Apache-2.0</license>
++
++  <depend>rclpy</depend>
++  <depend>std_msgs</depend>
++
++
++  <test_depend>ament_copyright</test_depend>
++  <test_depend>ament_flake8</test_depend>
++  <test_depend>ament_pep257</test_depend>
++  <test_depend>python3-pytest</test_depend>
++
++  <export>
++    <build_type>ament_python</build_type>
++  </export>
++</package>
+diff --git a/lab1_pubsub/resource/lab1_pubsub b/lab1_pubsub/resource/lab1_pubsub
+new file mode 100644
+index 0000000..e69de29
+diff --git a/lab1_pubsub/setup.cfg b/lab1_pubsub/setup.cfg
+new file mode 100644
+index 0000000..fd7667a
+--- /dev/null
++++ b/lab1_pubsub/setup.cfg
+@@ -0,0 +1,4 @@
++[develop]
++script_dir=$base/lib/lab1_pubsub
++[install]
++install_scripts=$base/lib/lab1_pubsub
+diff --git a/lab1_pubsub/setup.py b/lab1_pubsub/setup.py
+new file mode 100644
+index 0000000..96aff67
+--- /dev/null
++++ b/lab1_pubsub/setup.py
+@@ -0,0 +1,32 @@
++from setuptools import find_packages, setup
++
++package_name = 'lab1_pubsub'
++
++setup(
++    name=package_name,
++    version='0.0.0',
++    packages=find_packages(exclude=['test']),
++    data_files=[
++        ('share/ament_index/resource_index/packages',
++            ['resource/' + package_name]),
++        ('share/' + package_name, ['package.xml']),
++    ],
++    install_requires=['setuptools'],
++    zip_safe=True,
++    maintainer='tokar',
++    maintainer_email='tokar@todo.todo',
++    description='TODO: Package description',
++    license='Apache-2.0',
++    extras_require={
++        'test': [
++            'pytest',
++        ],
++    },
++        entry_points={
++        'console_scripts': [
++            'publisher_node = lab1_pubsub.publisher_node:main',
++            'subscriber_node = lab1_pubsub.subscriber_node:main',
++        ],
++    },
++
++)
+diff --git a/lab1_pubsub/test/test_copyright.py b/lab1_pubsub/test/test_copyright.py
+new file mode 100644
+index 0000000..97a3919
+--- /dev/null
++++ b/lab1_pubsub/test/test_copyright.py
+@@ -0,0 +1,25 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_copyright.main import main
++import pytest
++
++
++# Remove the `skip` decorator once the source file(s) have a copyright header
++@pytest.mark.skip(reason='No copyright header has been placed in the generated source file.')
++@pytest.mark.copyright
++@pytest.mark.linter
++def test_copyright():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found errors'
+diff --git a/lab1_pubsub/test/test_flake8.py b/lab1_pubsub/test/test_flake8.py
+new file mode 100644
+index 0000000..27ee107
+--- /dev/null
++++ b/lab1_pubsub/test/test_flake8.py
+@@ -0,0 +1,25 @@
++# Copyright 2017 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_flake8.main import main_with_errors
++import pytest
++
++
++@pytest.mark.flake8
++@pytest.mark.linter
++def test_flake8():
++    rc, errors = main_with_errors(argv=[])
++    assert rc == 0, \
++        'Found %d code style errors / warnings:\n' % len(errors) + \
++        '\n'.join(errors)
+diff --git a/lab1_pubsub/test/test_pep257.py b/lab1_pubsub/test/test_pep257.py
+new file mode 100644
+index 0000000..b234a38
+--- /dev/null
++++ b/lab1_pubsub/test/test_pep257.py
+@@ -0,0 +1,23 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_pep257.main import main
++import pytest
++
++
++@pytest.mark.linter
++@pytest.mark.pep257
++def test_pep257():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found code style errors / warnings'
+diff --git a/monitor_pkg/LICENSE b/monitor_pkg/LICENSE
+new file mode 100644
+index 0000000..d645695
+--- /dev/null
++++ b/monitor_pkg/LICENSE
+@@ -0,0 +1,202 @@
++
++                                 Apache License
++                           Version 2.0, January 2004
++                        http://www.apache.org/licenses/
++
++   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
++
++   1. Definitions.
++
++      "License" shall mean the terms and conditions for use, reproduction,
++      and distribution as defined by Sections 1 through 9 of this document.
++
++      "Licensor" shall mean the copyright owner or entity authorized by
++      the copyright owner that is granting the License.
++
++      "Legal Entity" shall mean the union of the acting entity and all
++      other entities that control, are controlled by, or are under common
++      control with that entity. For the purposes of this definition,
++      "control" means (i) the power, direct or indirect, to cause the
++      direction or management of such entity, whether by contract or
++      otherwise, or (ii) ownership of fifty percent (50%) or more of the
++      outstanding shares, or (iii) beneficial ownership of such entity.
++
++      "You" (or "Your") shall mean an individual or Legal Entity
++      exercising permissions granted by this License.
++
++      "Source" form shall mean the preferred form for making modifications,
++      including but not limited to software source code, documentation
++      source, and configuration files.
++
++      "Object" form shall mean any form resulting from mechanical
++      transformation or translation of a Source form, including but
++      not limited to compiled object code, generated documentation,
++      and conversions to other media types.
++
++      "Work" shall mean the work of authorship, whether in Source or
++      Object form, made available under the License, as indicated by a
++      copyright notice that is included in or attached to the work
++      (an example is provided in the Appendix below).
++
++      "Derivative Works" shall mean any work, whether in Source or Object
++      form, that is based on (or derived from) the Work and for which the
++      editorial revisions, annotations, elaborations, or other modifications
++      represent, as a whole, an original work of authorship. For the purposes
++      of this License, Derivative Works shall not include works that remain
++      separable from, or merely link (or bind by name) to the interfaces of,
++      the Work and Derivative Works thereof.
++
++      "Contribution" shall mean any work of authorship, including
++      the original version of the Work and any modifications or additions
++      to that Work or Derivative Works thereof, that is intentionally
++      submitted to Licensor for inclusion in the Work by the copyright owner
++      or by an individual or Legal Entity authorized to submit on behalf of
++      the copyright owner. For the purposes of this definition, "submitted"
++      means any form of electronic, verbal, or written communication sent
++      to the Licensor or its representatives, including but not limited to
++      communication on electronic mailing lists, source code control systems,
++      and issue tracking systems that are managed by, or on behalf of, the
++      Licensor for the purpose of discussing and improving the Work, but
++      excluding communication that is conspicuously marked or otherwise
++      designated in writing by the copyright owner as "Not a Contribution."
++
++      "Contributor" shall mean Licensor and any individual or Legal Entity
++      on behalf of whom a Contribution has been received by Licensor and
++      subsequently incorporated within the Work.
++
++   2. Grant of Copyright License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      copyright license to reproduce, prepare Derivative Works of,
++      publicly display, publicly perform, sublicense, and distribute the
++      Work and such Derivative Works in Source or Object form.
++
++   3. Grant of Patent License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      (except as stated in this section) patent license to make, have made,
++      use, offer to sell, sell, import, and otherwise transfer the Work,
++      where such license applies only to those patent claims licensable
++      by such Contributor that are necessarily infringed by their
++      Contribution(s) alone or by combination of their Contribution(s)
++      with the Work to which such Contribution(s) was submitted. If You
++      institute patent litigation against any entity (including a
++      cross-claim or counterclaim in a lawsuit) alleging that the Work
++      or a Contribution incorporated within the Work constitutes direct
++      or contributory patent infringement, then any patent licenses
++      granted to You under this License for that Work shall terminate
++      as of the date such litigation is filed.
++
++   4. Redistribution. You may reproduce and distribute copies of the
++      Work or Derivative Works thereof in any medium, with or without
++      modifications, and in Source or Object form, provided that You
++      meet the following conditions:
++
++      (a) You must give any other recipients of the Work or
++          Derivative Works a copy of this License; and
++
++      (b) You must cause any modified files to carry prominent notices
++          stating that You changed the files; and
++
++      (c) You must retain, in the Source form of any Derivative Works
++          that You distribute, all copyright, patent, trademark, and
++          attribution notices from the Source form of the Work,
++          excluding those notices that do not pertain to any part of
++          the Derivative Works; and
++
++      (d) If the Work includes a "NOTICE" text file as part of its
++          distribution, then any Derivative Works that You distribute must
++          include a readable copy of the attribution notices contained
++          within such NOTICE file, excluding those notices that do not
++          pertain to any part of the Derivative Works, in at least one
++          of the following places: within a NOTICE text file distributed
++          as part of the Derivative Works; within the Source form or
++          documentation, if provided along with the Derivative Works; or,
++          within a display generated by the Derivative Works, if and
++          wherever such third-party notices normally appear. The contents
++          of the NOTICE file are for informational purposes only and
++          do not modify the License. You may add Your own attribution
++          notices within Derivative Works that You distribute, alongside
++          or as an addendum to the NOTICE text from the Work, provided
++          that such additional attribution notices cannot be construed
++          as modifying the License.
++
++      You may add Your own copyright statement to Your modifications and
++      may provide additional or different license terms and conditions
++      for use, reproduction, or distribution of Your modifications, or
++      for any such Derivative Works as a whole, provided Your use,
++      reproduction, and distribution of the Work otherwise complies with
++      the conditions stated in this License.
++
++   5. Submission of Contributions. Unless You explicitly state otherwise,
++      any Contribution intentionally submitted for inclusion in the Work
++      by You to the Licensor shall be under the terms and conditions of
++      this License, without any additional terms or conditions.
++      Notwithstanding the above, nothing herein shall supersede or modify
++      the terms of any separate license agreement you may have executed
++      with Licensor regarding such Contributions.
++
++   6. Trademarks. This License does not grant permission to use the trade
++      names, trademarks, service marks, or product names of the Licensor,
++      except as required for reasonable and customary use in describing the
++      origin of the Work and reproducing the content of the NOTICE file.
++
++   7. Disclaimer of Warranty. Unless required by applicable law or
++      agreed to in writing, Licensor provides the Work (and each
++      Contributor provides its Contributions) on an "AS IS" BASIS,
++      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++      implied, including, without limitation, any warranties or conditions
++      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
++      PARTICULAR PURPOSE. You are solely responsible for determining the
++      appropriateness of using or redistributing the Work and assume any
++      risks associated with Your exercise of permissions under this License.
++
++   8. Limitation of Liability. In no event and under no legal theory,
++      whether in tort (including negligence), contract, or otherwise,
++      unless required by applicable law (such as deliberate and grossly
++      negligent acts) or agreed to in writing, shall any Contributor be
++      liable to You for damages, including any direct, indirect, special,
++      incidental, or consequential damages of any character arising as a
++      result of this License or out of the use or inability to use the
++      Work (including but not limited to damages for loss of goodwill,
++      work stoppage, computer failure or malfunction, or any and all
++      other commercial damages or losses), even if such Contributor
++      has been advised of the possibility of such damages.
++
++   9. Accepting Warranty or Additional Liability. While redistributing
++      the Work or Derivative Works thereof, You may choose to offer,
++      and charge a fee for, acceptance of support, warranty, indemnity,
++      or other liability obligations and/or rights consistent with this
++      License. However, in accepting such obligations, You may act only
++      on Your own behalf and on Your sole responsibility, not on behalf
++      of any other Contributor, and only if You agree to indemnify,
++      defend, and hold each Contributor harmless for any liability
++      incurred by, or claims asserted against, such Contributor by reason
++      of your accepting any such warranty or additional liability.
++
++   END OF TERMS AND CONDITIONS
++
++   APPENDIX: How to apply the Apache License to your work.
++
++      To apply the Apache License to your work, attach the following
++      boilerplate notice, with the fields enclosed by brackets "[]"
++      replaced with your own identifying information. (Don't include
++      the brackets!)  The text should be enclosed in the appropriate
++      comment syntax for the file format. We also recommend that a
++      file or class name and description of purpose be included on the
++      same "printed page" as the copyright notice for easier
++      identification within third-party archives.
++
++   Copyright [yyyy] [name of copyright owner]
++
++   Licensed under the Apache License, Version 2.0 (the "License");
++   you may not use this file except in compliance with the License.
++   You may obtain a copy of the License at
++
++       http://www.apache.org/licenses/LICENSE-2.0
++
++   Unless required by applicable law or agreed to in writing, software
++   distributed under the License is distributed on an "AS IS" BASIS,
++   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++   See the License for the specific language governing permissions and
++   limitations under the License.
+diff --git a/monitor_pkg/monitor_pkg/__init__.py b/monitor_pkg/monitor_pkg/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/monitor_pkg/monitor_pkg/monitor_node.py b/monitor_pkg/monitor_pkg/monitor_node.py
+new file mode 100644
+index 0000000..f7936fe
+--- /dev/null
++++ b/monitor_pkg/monitor_pkg/monitor_node.py
+@@ -0,0 +1,96 @@
++import rclpy
++from rclpy.node import Node
++from std_msgs.msg import Float32, String
++
++
++class MonitorNode(Node):
++
++    def __init__(self):
++        super().__init__('monitor_node')
++        self.declare_parameter('heartbeat_timeout', 2.5)  # с без heartbeat = нода не відповідає
++        self.declare_parameter('data_timeout', 2.5)       # с без даних = дані не приходять
++        self.declare_parameter('expected_rate', 10.0)     # Гц, очікувана частота /sensor_data
++        self.heartbeat_timeout = self.get_parameter('heartbeat_timeout').value
++        self.data_timeout = self.get_parameter('data_timeout').value
++        self.expected_rate = self.get_parameter('expected_rate').value
++
++        now = self.now()
++        self.last_heartbeat = now
++        self.last_data = now
++        self.last_check = now
++        self.data_count = 0
++        self.state = None
++
++        self.create_subscription(String, '/heartbeat', self.heartbeat_callback, 10)
++        self.create_subscription(Float32, '/sensor_data', self.data_callback, 10)
++        self.status_pub = self.create_publisher(String, '/system_status', 10)
++        # Раз на секунду оцінюємо стан системи
++        self.timer = self.create_timer(1.0, self.check)
++
++        self.get_logger().info(
++            f'Monitor Node started: heartbeat_timeout={self.heartbeat_timeout} s, '
++            f'data_timeout={self.data_timeout} s, expected_rate={self.expected_rate} Hz')
++
++    def now(self):
++        return self.get_clock().now().nanoseconds / 1e9
++
++    def heartbeat_callback(self, msg):
++        self.last_heartbeat = self.now()
++        self.get_logger().debug(f'Heartbeat received: {msg.data}')
++
++    def data_callback(self, msg):
++        self.last_data = self.now()
++        self.data_count += 1
++
++    def check(self):
++        now = self.now()
++        heartbeat_age = now - self.last_heartbeat
++        data_age = now - self.last_data
++        rate = self.data_count / (now - self.last_check)
++        self.data_count = 0
++        self.last_check = now
++
++        if heartbeat_age > self.heartbeat_timeout:
++            level = 'ERROR'
++            text = f'Heartbeat lost: no signal for {heartbeat_age:.1f} s, node is not responding'
++        elif data_age > self.data_timeout:
++            level = 'ERROR'
++            text = f'No data on /sensor_data for {data_age:.1f} s, but heartbeat is alive'
++        elif rate < 0.75 * self.expected_rate:
++            level = 'WARN'
++            text = f'Data unstable: rate {rate:.1f} Hz (expected {self.expected_rate:.1f} Hz)'
++        else:
++            level = 'OK'
++            text = f'System stable: heartbeat ok, data rate {rate:.1f} Hz'
++
++        if level == 'ERROR':
++            self.get_logger().error(text)
++        elif level == 'WARN':
++            self.get_logger().warn(text)
++        else:
++            self.get_logger().info(text)
++        if level != self.state:
++            if self.state is not None:
++                self.get_logger().info(f'Status changed: {self.state} -> {level}')
++            self.state = level
++
++        status = String()
++        status.data = f'{level}: {text}'
++        self.status_pub.publish(status)
++
++
++def main(args=None):
++    rclpy.init(args=args)
++    node = MonitorNode()
++    try:
++        rclpy.spin(node)
++    except KeyboardInterrupt:
++        pass
++    finally:
++        node.destroy_node()
++        if rclpy.ok():
++            rclpy.shutdown()
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/monitor_pkg/package.xml b/monitor_pkg/package.xml
+new file mode 100644
+index 0000000..e1e6456
+--- /dev/null
++++ b/monitor_pkg/package.xml
+@@ -0,0 +1,21 @@
++<?xml version="1.0"?>
++<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
++<package format="3">
++  <name>monitor_pkg</name>
++  <version>0.0.0</version>
++  <description>TODO: Package description</description>
++  <maintainer email="tokar@todo.todo">tokar</maintainer>
++  <license>Apache-2.0</license>
++
++  <depend>rclpy</depend>
++  <depend>std_msgs</depend>
++
++  <test_depend>ament_copyright</test_depend>
++  <test_depend>ament_flake8</test_depend>
++  <test_depend>ament_pep257</test_depend>
++  <test_depend>python3-pytest</test_depend>
++
++  <export>
++    <build_type>ament_python</build_type>
++  </export>
++</package>
+diff --git a/monitor_pkg/resource/monitor_pkg b/monitor_pkg/resource/monitor_pkg
+new file mode 100644
+index 0000000..e69de29
+diff --git a/monitor_pkg/setup.cfg b/monitor_pkg/setup.cfg
+new file mode 100644
+index 0000000..ea7b3d7
+--- /dev/null
++++ b/monitor_pkg/setup.cfg
+@@ -0,0 +1,4 @@
++[develop]
++script_dir=$base/lib/monitor_pkg
++[install]
++install_scripts=$base/lib/monitor_pkg
+diff --git a/monitor_pkg/setup.py b/monitor_pkg/setup.py
+new file mode 100644
+index 0000000..9975c64
+--- /dev/null
++++ b/monitor_pkg/setup.py
+@@ -0,0 +1,30 @@
++from setuptools import find_packages, setup
++
++package_name = 'monitor_pkg'
++
++setup(
++    name=package_name,
++    version='0.0.0',
++    packages=find_packages(exclude=['test']),
++    data_files=[
++        ('share/ament_index/resource_index/packages',
++            ['resource/' + package_name]),
++        ('share/' + package_name, ['package.xml']),
++    ],
++    install_requires=['setuptools'],
++    zip_safe=True,
++    maintainer='tokar',
++    maintainer_email='tokar@todo.todo',
++    description='TODO: Package description',
++    license='Apache-2.0',
++    extras_require={
++        'test': [
++            'pytest',
++        ],
++    },
++    entry_points={
++        'console_scripts': [
++            'monitor_node = monitor_pkg.monitor_node:main'
++        ],
++    },
++)
+diff --git a/monitor_pkg/test/test_copyright.py b/monitor_pkg/test/test_copyright.py
+new file mode 100644
+index 0000000..97a3919
+--- /dev/null
++++ b/monitor_pkg/test/test_copyright.py
+@@ -0,0 +1,25 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_copyright.main import main
++import pytest
++
++
++# Remove the `skip` decorator once the source file(s) have a copyright header
++@pytest.mark.skip(reason='No copyright header has been placed in the generated source file.')
++@pytest.mark.copyright
++@pytest.mark.linter
++def test_copyright():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found errors'
+diff --git a/monitor_pkg/test/test_flake8.py b/monitor_pkg/test/test_flake8.py
+new file mode 100644
+index 0000000..27ee107
+--- /dev/null
++++ b/monitor_pkg/test/test_flake8.py
+@@ -0,0 +1,25 @@
++# Copyright 2017 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_flake8.main import main_with_errors
++import pytest
++
++
++@pytest.mark.flake8
++@pytest.mark.linter
++def test_flake8():
++    rc, errors = main_with_errors(argv=[])
++    assert rc == 0, \
++        'Found %d code style errors / warnings:\n' % len(errors) + \
++        '\n'.join(errors)
+diff --git a/monitor_pkg/test/test_pep257.py b/monitor_pkg/test/test_pep257.py
+new file mode 100644
+index 0000000..b234a38
+--- /dev/null
++++ b/monitor_pkg/test/test_pep257.py
+@@ -0,0 +1,23 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_pep257.main import main
++import pytest
++
++
++@pytest.mark.linter
++@pytest.mark.pep257
++def test_pep257():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found code style errors / warnings'
+diff --git a/motion_control/LICENSE b/motion_control/LICENSE
+new file mode 100644
+index 0000000..d645695
+--- /dev/null
++++ b/motion_control/LICENSE
+@@ -0,0 +1,202 @@
++
++                                 Apache License
++                           Version 2.0, January 2004
++                        http://www.apache.org/licenses/
++
++   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
++
++   1. Definitions.
++
++      "License" shall mean the terms and conditions for use, reproduction,
++      and distribution as defined by Sections 1 through 9 of this document.
++
++      "Licensor" shall mean the copyright owner or entity authorized by
++      the copyright owner that is granting the License.
++
++      "Legal Entity" shall mean the union of the acting entity and all
++      other entities that control, are controlled by, or are under common
++      control with that entity. For the purposes of this definition,
++      "control" means (i) the power, direct or indirect, to cause the
++      direction or management of such entity, whether by contract or
++      otherwise, or (ii) ownership of fifty percent (50%) or more of the
++      outstanding shares, or (iii) beneficial ownership of such entity.
++
++      "You" (or "Your") shall mean an individual or Legal Entity
++      exercising permissions granted by this License.
++
++      "Source" form shall mean the preferred form for making modifications,
++      including but not limited to software source code, documentation
++      source, and configuration files.
++
++      "Object" form shall mean any form resulting from mechanical
++      transformation or translation of a Source form, including but
++      not limited to compiled object code, generated documentation,
++      and conversions to other media types.
++
++      "Work" shall mean the work of authorship, whether in Source or
++      Object form, made available under the License, as indicated by a
++      copyright notice that is included in or attached to the work
++      (an example is provided in the Appendix below).
++
++      "Derivative Works" shall mean any work, whether in Source or Object
++      form, that is based on (or derived from) the Work and for which the
++      editorial revisions, annotations, elaborations, or other modifications
++      represent, as a whole, an original work of authorship. For the purposes
++      of this License, Derivative Works shall not include works that remain
++      separable from, or merely link (or bind by name) to the interfaces of,
++      the Work and Derivative Works thereof.
++
++      "Contribution" shall mean any work of authorship, including
++      the original version of the Work and any modifications or additions
++      to that Work or Derivative Works thereof, that is intentionally
++      submitted to Licensor for inclusion in the Work by the copyright owner
++      or by an individual or Legal Entity authorized to submit on behalf of
++      the copyright owner. For the purposes of this definition, "submitted"
++      means any form of electronic, verbal, or written communication sent
++      to the Licensor or its representatives, including but not limited to
++      communication on electronic mailing lists, source code control systems,
++      and issue tracking systems that are managed by, or on behalf of, the
++      Licensor for the purpose of discussing and improving the Work, but
++      excluding communication that is conspicuously marked or otherwise
++      designated in writing by the copyright owner as "Not a Contribution."
++
++      "Contributor" shall mean Licensor and any individual or Legal Entity
++      on behalf of whom a Contribution has been received by Licensor and
++      subsequently incorporated within the Work.
++
++   2. Grant of Copyright License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      copyright license to reproduce, prepare Derivative Works of,
++      publicly display, publicly perform, sublicense, and distribute the
++      Work and such Derivative Works in Source or Object form.
++
++   3. Grant of Patent License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      (except as stated in this section) patent license to make, have made,
++      use, offer to sell, sell, import, and otherwise transfer the Work,
++      where such license applies only to those patent claims licensable
++      by such Contributor that are necessarily infringed by their
++      Contribution(s) alone or by combination of their Contribution(s)
++      with the Work to which such Contribution(s) was submitted. If You
++      institute patent litigation against any entity (including a
++      cross-claim or counterclaim in a lawsuit) alleging that the Work
++      or a Contribution incorporated within the Work constitutes direct
++      or contributory patent infringement, then any patent licenses
++      granted to You under this License for that Work shall terminate
++      as of the date such litigation is filed.
++
++   4. Redistribution. You may reproduce and distribute copies of the
++      Work or Derivative Works thereof in any medium, with or without
++      modifications, and in Source or Object form, provided that You
++      meet the following conditions:
++
++      (a) You must give any other recipients of the Work or
++          Derivative Works a copy of this License; and
++
++      (b) You must cause any modified files to carry prominent notices
++          stating that You changed the files; and
++
++      (c) You must retain, in the Source form of any Derivative Works
++          that You distribute, all copyright, patent, trademark, and
++          attribution notices from the Source form of the Work,
++          excluding those notices that do not pertain to any part of
++          the Derivative Works; and
++
++      (d) If the Work includes a "NOTICE" text file as part of its
++          distribution, then any Derivative Works that You distribute must
++          include a readable copy of the attribution notices contained
++          within such NOTICE file, excluding those notices that do not
++          pertain to any part of the Derivative Works, in at least one
++          of the following places: within a NOTICE text file distributed
++          as part of the Derivative Works; within the Source form or
++          documentation, if provided along with the Derivative Works; or,
++          within a display generated by the Derivative Works, if and
++          wherever such third-party notices normally appear. The contents
++          of the NOTICE file are for informational purposes only and
++          do not modify the License. You may add Your own attribution
++          notices within Derivative Works that You distribute, alongside
++          or as an addendum to the NOTICE text from the Work, provided
++          that such additional attribution notices cannot be construed
++          as modifying the License.
++
++      You may add Your own copyright statement to Your modifications and
++      may provide additional or different license terms and conditions
++      for use, reproduction, or distribution of Your modifications, or
++      for any such Derivative Works as a whole, provided Your use,
++      reproduction, and distribution of the Work otherwise complies with
++      the conditions stated in this License.
++
++   5. Submission of Contributions. Unless You explicitly state otherwise,
++      any Contribution intentionally submitted for inclusion in the Work
++      by You to the Licensor shall be under the terms and conditions of
++      this License, without any additional terms or conditions.
++      Notwithstanding the above, nothing herein shall supersede or modify
++      the terms of any separate license agreement you may have executed
++      with Licensor regarding such Contributions.
++
++   6. Trademarks. This License does not grant permission to use the trade
++      names, trademarks, service marks, or product names of the Licensor,
++      except as required for reasonable and customary use in describing the
++      origin of the Work and reproducing the content of the NOTICE file.
++
++   7. Disclaimer of Warranty. Unless required by applicable law or
++      agreed to in writing, Licensor provides the Work (and each
++      Contributor provides its Contributions) on an "AS IS" BASIS,
++      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++      implied, including, without limitation, any warranties or conditions
++      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
++      PARTICULAR PURPOSE. You are solely responsible for determining the
++      appropriateness of using or redistributing the Work and assume any
++      risks associated with Your exercise of permissions under this License.
++
++   8. Limitation of Liability. In no event and under no legal theory,
++      whether in tort (including negligence), contract, or otherwise,
++      unless required by applicable law (such as deliberate and grossly
++      negligent acts) or agreed to in writing, shall any Contributor be
++      liable to You for damages, including any direct, indirect, special,
++      incidental, or consequential damages of any character arising as a
++      result of this License or out of the use or inability to use the
++      Work (including but not limited to damages for loss of goodwill,
++      work stoppage, computer failure or malfunction, or any and all
++      other commercial damages or losses), even if such Contributor
++      has been advised of the possibility of such damages.
++
++   9. Accepting Warranty or Additional Liability. While redistributing
++      the Work or Derivative Works thereof, You may choose to offer,
++      and charge a fee for, acceptance of support, warranty, indemnity,
++      or other liability obligations and/or rights consistent with this
++      License. However, in accepting such obligations, You may act only
++      on Your own behalf and on Your sole responsibility, not on behalf
++      of any other Contributor, and only if You agree to indemnify,
++      defend, and hold each Contributor harmless for any liability
++      incurred by, or claims asserted against, such Contributor by reason
++      of your accepting any such warranty or additional liability.
++
++   END OF TERMS AND CONDITIONS
++
++   APPENDIX: How to apply the Apache License to your work.
++
++      To apply the Apache License to your work, attach the following
++      boilerplate notice, with the fields enclosed by brackets "[]"
++      replaced with your own identifying information. (Don't include
++      the brackets!)  The text should be enclosed in the appropriate
++      comment syntax for the file format. We also recommend that a
++      file or class name and description of purpose be included on the
++      same "printed page" as the copyright notice for easier
++      identification within third-party archives.
++
++   Copyright [yyyy] [name of copyright owner]
++
++   Licensed under the Apache License, Version 2.0 (the "License");
++   you may not use this file except in compliance with the License.
++   You may obtain a copy of the License at
++
++       http://www.apache.org/licenses/LICENSE-2.0
++
++   Unless required by applicable law or agreed to in writing, software
++   distributed under the License is distributed on an "AS IS" BASIS,
++   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++   See the License for the specific language governing permissions and
++   limitations under the License.
+diff --git a/motion_control/motion_control/__init__.py b/motion_control/motion_control/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/motion_control/motion_control/motion_node.py b/motion_control/motion_control/motion_node.py
+new file mode 100644
+index 0000000..b794b64
+--- /dev/null
++++ b/motion_control/motion_control/motion_node.py
+@@ -0,0 +1,94 @@
++import math
++
++import rclpy
++from rclpy.node import Node
++from geometry_msgs.msg import Twist
++from std_msgs.msg import Bool, String
++
++
++class MotionNode(Node):
++
++    def __init__(self):
++        super().__init__('motion_node')
++        # Межі швидкості задані параметрами — їх можна змінити без зміни коду
++        self.declare_parameter('max_linear_speed', 1.0)
++        self.declare_parameter('max_angular_speed', 1.5)
++        self.declare_parameter('output_topic', '/turtle1/cmd_vel')
++        self.max_linear = self.get_parameter('max_linear_speed').value
++        self.max_angular = self.get_parameter('max_angular_speed').value
++        output_topic = self.get_parameter('output_topic').value
++
++        self.sensor_alarm = False
++        self.subscription = self.create_subscription(
++            Twist, '/cmd_vel', self.cmd_vel_callback, 10)
++        self.alarm_subscription = self.create_subscription(
++            Bool, '/sensor_alarm', self.alarm_callback, 10)
++        self.publisher_ = self.create_publisher(Twist, output_topic, 10)
++        self.status_publisher = self.create_publisher(String, '/motion_status', 10)
++
++        self.get_logger().info(
++            f'Motion Node started: max_linear={self.max_linear} m/s, '
++            f'max_angular={self.max_angular} rad/s, output={output_topic}')
++
++    def limit(self, name, value, max_value):
++        if abs(value) <= max_value:
++            return value
++        # Обрізаємо до порогу, зберігаючи напрямок руху
++        limited = math.copysign(max_value, value)
++        self.get_logger().warn(
++            f'{name}={value:.2f} exceeds limit +/-{max_value:.2f}, '
++            f'limited to {limited:.2f}')
++        return limited
++
++    def alarm_callback(self, msg):
++        if msg.data != self.sensor_alarm:
++            self.sensor_alarm = msg.data
++            if self.sensor_alarm:
++                self.get_logger().warn('Sensor alarm ON: forward motion is blocked')
++            else:
++                self.get_logger().info('Sensor alarm OFF: motion allowed')
++
++    def cmd_vel_callback(self, msg):
++        self.get_logger().info(
++            f'Received: linear.x={msg.linear.x:.2f}, angular.z={msg.angular.z:.2f}')
++
++        cmd = Twist()
++        cmd.linear.x = self.limit('linear.x', msg.linear.x, self.max_linear)
++        cmd.angular.z = self.limit('angular.z', msg.angular.z, self.max_angular)
++        limited = (cmd.linear.x, cmd.angular.z) != (msg.linear.x, msg.angular.z)
++
++        # Тривога сенсора забороняє лише рух вперед; назад і поворот дозволені
++        blocked = self.sensor_alarm and cmd.linear.x > 0.0
++        if blocked:
++            cmd.linear.x = 0.0
++            self.get_logger().warn(
++                'Forward motion blocked by sensor alarm', throttle_duration_sec=1.0)
++
++        self.publisher_.publish(cmd)
++
++        self.get_logger().info(
++            f'Sent: linear.x={cmd.linear.x:.2f}, angular.z={cmd.angular.z:.2f}')
++
++        # Статус для GUI: OK, LIMITED (швидкість обмежено) або BLOCKED (рух заблоковано)
++        label = 'BLOCKED' if blocked else ('LIMITED' if limited else 'OK')
++        status = String()
++        status.data = (f'{label}: '
++                       f'linear.x={cmd.linear.x:.2f}, angular.z={cmd.angular.z:.2f}')
++        self.status_publisher.publish(status)
++
++
++def main(args=None):
++    rclpy.init(args=args)
++    node = MotionNode()
++    try:
++        rclpy.spin(node)
++    except KeyboardInterrupt:
++        pass
++    finally:
++        node.destroy_node()
++        if rclpy.ok():
++            rclpy.shutdown()
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/motion_control/package.xml b/motion_control/package.xml
+new file mode 100644
+index 0000000..6e533ee
+--- /dev/null
++++ b/motion_control/package.xml
+@@ -0,0 +1,22 @@
++<?xml version="1.0"?>
++<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
++<package format="3">
++  <name>motion_control</name>
++  <version>0.0.0</version>
++  <description>TODO: Package description</description>
++  <maintainer email="tokar@todo.todo">tokar</maintainer>
++  <license>Apache-2.0</license>
++
++  <depend>rclpy</depend>
++  <depend>geometry_msgs</depend>
++  <depend>std_msgs</depend>
++
++  <test_depend>ament_copyright</test_depend>
++  <test_depend>ament_flake8</test_depend>
++  <test_depend>ament_pep257</test_depend>
++  <test_depend>python3-pytest</test_depend>
++
++  <export>
++    <build_type>ament_python</build_type>
++  </export>
++</package>
+diff --git a/motion_control/resource/motion_control b/motion_control/resource/motion_control
+new file mode 100644
+index 0000000..e69de29
+diff --git a/motion_control/setup.cfg b/motion_control/setup.cfg
+new file mode 100644
+index 0000000..96ee93a
+--- /dev/null
++++ b/motion_control/setup.cfg
+@@ -0,0 +1,4 @@
++[develop]
++script_dir=$base/lib/motion_control
++[install]
++install_scripts=$base/lib/motion_control
+diff --git a/motion_control/setup.py b/motion_control/setup.py
+new file mode 100644
+index 0000000..239dcd1
+--- /dev/null
++++ b/motion_control/setup.py
+@@ -0,0 +1,30 @@
++from setuptools import find_packages, setup
++
++package_name = 'motion_control'
++
++setup(
++    name=package_name,
++    version='0.0.0',
++    packages=find_packages(exclude=['test']),
++    data_files=[
++        ('share/ament_index/resource_index/packages',
++            ['resource/' + package_name]),
++        ('share/' + package_name, ['package.xml']),
++    ],
++    install_requires=['setuptools'],
++    zip_safe=True,
++    maintainer='tokar',
++    maintainer_email='tokar@todo.todo',
++    description='TODO: Package description',
++    license='Apache-2.0',
++    extras_require={
++        'test': [
++            'pytest',
++        ],
++    },
++    entry_points={
++        'console_scripts': [
++            'motion_node = motion_control.motion_node:main'
++        ],
++    },
++)
+diff --git a/motion_control/test/test_copyright.py b/motion_control/test/test_copyright.py
+new file mode 100644
+index 0000000..97a3919
+--- /dev/null
++++ b/motion_control/test/test_copyright.py
+@@ -0,0 +1,25 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_copyright.main import main
++import pytest
++
++
++# Remove the `skip` decorator once the source file(s) have a copyright header
++@pytest.mark.skip(reason='No copyright header has been placed in the generated source file.')
++@pytest.mark.copyright
++@pytest.mark.linter
++def test_copyright():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found errors'
+diff --git a/motion_control/test/test_flake8.py b/motion_control/test/test_flake8.py
+new file mode 100644
+index 0000000..27ee107
+--- /dev/null
++++ b/motion_control/test/test_flake8.py
+@@ -0,0 +1,25 @@
++# Copyright 2017 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_flake8.main import main_with_errors
++import pytest
++
++
++@pytest.mark.flake8
++@pytest.mark.linter
++def test_flake8():
++    rc, errors = main_with_errors(argv=[])
++    assert rc == 0, \
++        'Found %d code style errors / warnings:\n' % len(errors) + \
++        '\n'.join(errors)
+diff --git a/motion_control/test/test_pep257.py b/motion_control/test/test_pep257.py
+new file mode 100644
+index 0000000..b234a38
+--- /dev/null
++++ b/motion_control/test/test_pep257.py
+@@ -0,0 +1,23 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_pep257.main import main
++import pytest
++
++
++@pytest.mark.linter
++@pytest.mark.pep257
++def test_pep257():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found code style errors / warnings'
+diff --git a/record_playback/LICENSE b/record_playback/LICENSE
+new file mode 100644
+index 0000000..d645695
+--- /dev/null
++++ b/record_playback/LICENSE
+@@ -0,0 +1,202 @@
++
++                                 Apache License
++                           Version 2.0, January 2004
++                        http://www.apache.org/licenses/
++
++   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
++
++   1. Definitions.
++
++      "License" shall mean the terms and conditions for use, reproduction,
++      and distribution as defined by Sections 1 through 9 of this document.
++
++      "Licensor" shall mean the copyright owner or entity authorized by
++      the copyright owner that is granting the License.
++
++      "Legal Entity" shall mean the union of the acting entity and all
++      other entities that control, are controlled by, or are under common
++      control with that entity. For the purposes of this definition,
++      "control" means (i) the power, direct or indirect, to cause the
++      direction or management of such entity, whether by contract or
++      otherwise, or (ii) ownership of fifty percent (50%) or more of the
++      outstanding shares, or (iii) beneficial ownership of such entity.
++
++      "You" (or "Your") shall mean an individual or Legal Entity
++      exercising permissions granted by this License.
++
++      "Source" form shall mean the preferred form for making modifications,
++      including but not limited to software source code, documentation
++      source, and configuration files.
++
++      "Object" form shall mean any form resulting from mechanical
++      transformation or translation of a Source form, including but
++      not limited to compiled object code, generated documentation,
++      and conversions to other media types.
++
++      "Work" shall mean the work of authorship, whether in Source or
++      Object form, made available under the License, as indicated by a
++      copyright notice that is included in or attached to the work
++      (an example is provided in the Appendix below).
++
++      "Derivative Works" shall mean any work, whether in Source or Object
++      form, that is based on (or derived from) the Work and for which the
++      editorial revisions, annotations, elaborations, or other modifications
++      represent, as a whole, an original work of authorship. For the purposes
++      of this License, Derivative Works shall not include works that remain
++      separable from, or merely link (or bind by name) to the interfaces of,
++      the Work and Derivative Works thereof.
++
++      "Contribution" shall mean any work of authorship, including
++      the original version of the Work and any modifications or additions
++      to that Work or Derivative Works thereof, that is intentionally
++      submitted to Licensor for inclusion in the Work by the copyright owner
++      or by an individual or Legal Entity authorized to submit on behalf of
++      the copyright owner. For the purposes of this definition, "submitted"
++      means any form of electronic, verbal, or written communication sent
++      to the Licensor or its representatives, including but not limited to
++      communication on electronic mailing lists, source code control systems,
++      and issue tracking systems that are managed by, or on behalf of, the
++      Licensor for the purpose of discussing and improving the Work, but
++      excluding communication that is conspicuously marked or otherwise
++      designated in writing by the copyright owner as "Not a Contribution."
++
++      "Contributor" shall mean Licensor and any individual or Legal Entity
++      on behalf of whom a Contribution has been received by Licensor and
++      subsequently incorporated within the Work.
++
++   2. Grant of Copyright License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      copyright license to reproduce, prepare Derivative Works of,
++      publicly display, publicly perform, sublicense, and distribute the
++      Work and such Derivative Works in Source or Object form.
++
++   3. Grant of Patent License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      (except as stated in this section) patent license to make, have made,
++      use, offer to sell, sell, import, and otherwise transfer the Work,
++      where such license applies only to those patent claims licensable
++      by such Contributor that are necessarily infringed by their
++      Contribution(s) alone or by combination of their Contribution(s)
++      with the Work to which such Contribution(s) was submitted. If You
++      institute patent litigation against any entity (including a
++      cross-claim or counterclaim in a lawsuit) alleging that the Work
++      or a Contribution incorporated within the Work constitutes direct
++      or contributory patent infringement, then any patent licenses
++      granted to You under this License for that Work shall terminate
++      as of the date such litigation is filed.
++
++   4. Redistribution. You may reproduce and distribute copies of the
++      Work or Derivative Works thereof in any medium, with or without
++      modifications, and in Source or Object form, provided that You
++      meet the following conditions:
++
++      (a) You must give any other recipients of the Work or
++          Derivative Works a copy of this License; and
++
++      (b) You must cause any modified files to carry prominent notices
++          stating that You changed the files; and
++
++      (c) You must retain, in the Source form of any Derivative Works
++          that You distribute, all copyright, patent, trademark, and
++          attribution notices from the Source form of the Work,
++          excluding those notices that do not pertain to any part of
++          the Derivative Works; and
++
++      (d) If the Work includes a "NOTICE" text file as part of its
++          distribution, then any Derivative Works that You distribute must
++          include a readable copy of the attribution notices contained
++          within such NOTICE file, excluding those notices that do not
++          pertain to any part of the Derivative Works, in at least one
++          of the following places: within a NOTICE text file distributed
++          as part of the Derivative Works; within the Source form or
++          documentation, if provided along with the Derivative Works; or,
++          within a display generated by the Derivative Works, if and
++          wherever such third-party notices normally appear. The contents
++          of the NOTICE file are for informational purposes only and
++          do not modify the License. You may add Your own attribution
++          notices within Derivative Works that You distribute, alongside
++          or as an addendum to the NOTICE text from the Work, provided
++          that such additional attribution notices cannot be construed
++          as modifying the License.
++
++      You may add Your own copyright statement to Your modifications and
++      may provide additional or different license terms and conditions
++      for use, reproduction, or distribution of Your modifications, or
++      for any such Derivative Works as a whole, provided Your use,
++      reproduction, and distribution of the Work otherwise complies with
++      the conditions stated in this License.
++
++   5. Submission of Contributions. Unless You explicitly state otherwise,
++      any Contribution intentionally submitted for inclusion in the Work
++      by You to the Licensor shall be under the terms and conditions of
++      this License, without any additional terms or conditions.
++      Notwithstanding the above, nothing herein shall supersede or modify
++      the terms of any separate license agreement you may have executed
++      with Licensor regarding such Contributions.
++
++   6. Trademarks. This License does not grant permission to use the trade
++      names, trademarks, service marks, or product names of the Licensor,
++      except as required for reasonable and customary use in describing the
++      origin of the Work and reproducing the content of the NOTICE file.
++
++   7. Disclaimer of Warranty. Unless required by applicable law or
++      agreed to in writing, Licensor provides the Work (and each
++      Contributor provides its Contributions) on an "AS IS" BASIS,
++      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++      implied, including, without limitation, any warranties or conditions
++      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
++      PARTICULAR PURPOSE. You are solely responsible for determining the
++      appropriateness of using or redistributing the Work and assume any
++      risks associated with Your exercise of permissions under this License.
++
++   8. Limitation of Liability. In no event and under no legal theory,
++      whether in tort (including negligence), contract, or otherwise,
++      unless required by applicable law (such as deliberate and grossly
++      negligent acts) or agreed to in writing, shall any Contributor be
++      liable to You for damages, including any direct, indirect, special,
++      incidental, or consequential damages of any character arising as a
++      result of this License or out of the use or inability to use the
++      Work (including but not limited to damages for loss of goodwill,
++      work stoppage, computer failure or malfunction, or any and all
++      other commercial damages or losses), even if such Contributor
++      has been advised of the possibility of such damages.
++
++   9. Accepting Warranty or Additional Liability. While redistributing
++      the Work or Derivative Works thereof, You may choose to offer,
++      and charge a fee for, acceptance of support, warranty, indemnity,
++      or other liability obligations and/or rights consistent with this
++      License. However, in accepting such obligations, You may act only
++      on Your own behalf and on Your sole responsibility, not on behalf
++      of any other Contributor, and only if You agree to indemnify,
++      defend, and hold each Contributor harmless for any liability
++      incurred by, or claims asserted against, such Contributor by reason
++      of your accepting any such warranty or additional liability.
++
++   END OF TERMS AND CONDITIONS
++
++   APPENDIX: How to apply the Apache License to your work.
++
++      To apply the Apache License to your work, attach the following
++      boilerplate notice, with the fields enclosed by brackets "[]"
++      replaced with your own identifying information. (Don't include
++      the brackets!)  The text should be enclosed in the appropriate
++      comment syntax for the file format. We also recommend that a
++      file or class name and description of purpose be included on the
++      same "printed page" as the copyright notice for easier
++      identification within third-party archives.
++
++   Copyright [yyyy] [name of copyright owner]
++
++   Licensed under the Apache License, Version 2.0 (the "License");
++   you may not use this file except in compliance with the License.
++   You may obtain a copy of the License at
++
++       http://www.apache.org/licenses/LICENSE-2.0
++
++   Unless required by applicable law or agreed to in writing, software
++   distributed under the License is distributed on an "AS IS" BASIS,
++   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++   See the License for the specific language governing permissions and
++   limitations under the License.
+diff --git a/record_playback/package.xml b/record_playback/package.xml
+new file mode 100644
+index 0000000..72f07ba
+--- /dev/null
++++ b/record_playback/package.xml
+@@ -0,0 +1,21 @@
++<?xml version="1.0"?>
++<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
++<package format="3">
++  <name>record_playback</name>
++  <version>0.0.0</version>
++  <description>TODO: Package description</description>
++  <maintainer email="tokar@todo.todo">tokar</maintainer>
++  <license>Apache-2.0</license>
++
++  <depend>rclpy</depend>
++  <depend>geometry_msgs</depend>
++
++  <test_depend>ament_copyright</test_depend>
++  <test_depend>ament_flake8</test_depend>
++  <test_depend>ament_pep257</test_depend>
++  <test_depend>python3-pytest</test_depend>
++
++  <export>
++    <build_type>ament_python</build_type>
++  </export>
++</package>
+diff --git a/record_playback/record_playback/__init__.py b/record_playback/record_playback/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/record_playback/record_playback/playback_node.py b/record_playback/record_playback/playback_node.py
+new file mode 100644
+index 0000000..bfffa29
+--- /dev/null
++++ b/record_playback/record_playback/playback_node.py
+@@ -0,0 +1,100 @@
++import csv
++import os
++
++import rclpy
++from rclpy.node import Node
++from geometry_msgs.msg import Twist
++
++
++class PlaybackNode(Node):
++
++    def __init__(self):
++        super().__init__('playback_node')
++        self.declare_parameter('file', '~/ros2_ws/data/route.csv')
++        self.declare_parameter('speed', 1.0)        # 2.0 = відтворення вдвічі швидше
++        self.declare_parameter('start_delay', 3.0)  # с до початку відтворення
++        self.declare_parameter('end_hold', 1.0)     # с утримання останньої команди
++        path = os.path.expanduser(self.get_parameter('file').value)
++        self.speed = self.get_parameter('speed').value
++        self.end_hold = self.get_parameter('end_hold').value
++        start_delay = self.get_parameter('start_delay').value
++
++        try:
++            self.rows = self.load(path)
++        except (OSError, KeyError, ValueError) as err:
++            self.get_logger().error(f'Cannot read scenario {path}: {err}')
++            raise SystemExit(1)
++        if not self.rows:
++            self.get_logger().error(f'Scenario {path} is empty')
++            raise SystemExit(1)
++
++        self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
++        self.index = 0
++        self.errors = []
++        self.done = False
++        self.start = self.now() + start_delay
++        # Таймер 100 Гц перевіряє, чи настав час наступної команди
++        self.timer = self.create_timer(0.01, self.tick)
++
++        duration = self.rows[-1][0] / self.speed
++        self.get_logger().info(
++            f'Loaded {len(self.rows)} commands from {path}, duration {duration:.2f} s, '
++            f'speed x{self.speed}. Starting in {start_delay} s')
++
++    def now(self):
++        return self.get_clock().now().nanoseconds / 1e9
++
++    def load(self, path):
++        with open(path, newline='', encoding='utf-8') as f:
++            return [(float(r['time']), float(r['linear_x']), float(r['angular_z']))
++                    for r in csv.DictReader(f, skipinitialspace=True)]
++
++    def send(self, linear_x, angular_z):
++        msg = Twist()
++        msg.linear.x = linear_x
++        msg.angular.z = angular_z
++        self.publisher_.publish(msg)
++
++    def tick(self):
++        elapsed = self.now() - self.start
++        # Відправляємо всі команди, час яких уже настав, у порядку запису
++        while self.index < len(self.rows):
++            t, linear_x, angular_z = self.rows[self.index]
++            planned = t / self.speed
++            if elapsed < planned:
++                return
++            self.send(linear_x, angular_z)
++            self.errors.append(elapsed - planned)
++            self.index += 1
++            self.get_logger().info(
++                f'#{self.index}/{len(self.rows)} planned={planned:.3f} s, '
++                f'actual={elapsed:.3f} s, linear.x={linear_x:.3f}, angular.z={angular_z:.3f}')
++
++        # Усі команди відправлено: після утримання останньої надсилаємо Стоп
++        if elapsed >= self.rows[-1][0] / self.speed + self.end_hold:
++            self.send(0.0, 0.0)
++            self.timer.cancel()
++            self.done = True
++            worst = max(abs(e) for e in self.errors) * 1000.0
++            mean = sum(abs(e) for e in self.errors) / len(self.errors) * 1000.0
++            self.get_logger().info(
++                f'Playback finished: {len(self.errors)} commands sent, '
++                f'timing error mean={mean:.1f} ms, max={worst:.1f} ms. Stop command sent')
++
++
++def main(args=None):
++    rclpy.init(args=args)
++    node = PlaybackNode()
++    try:
++        while rclpy.ok() and not node.done:
++            rclpy.spin_once(node, timeout_sec=0.05)
++    except KeyboardInterrupt:
++        pass
++    finally:
++        node.destroy_node()
++        if rclpy.ok():
++            rclpy.shutdown()
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/record_playback/record_playback/record_node.py b/record_playback/record_playback/record_node.py
+new file mode 100644
+index 0000000..db7ad14
+--- /dev/null
++++ b/record_playback/record_playback/record_node.py
+@@ -0,0 +1,61 @@
++import os
++
++import rclpy
++from rclpy.node import Node
++from geometry_msgs.msg import Twist
++
++
++class RecordNode(Node):
++
++    def __init__(self):
++        super().__init__('record_node')
++        self.declare_parameter('file', '~/ros2_ws/data/route.csv')
++        path = os.path.expanduser(self.get_parameter('file').value)
++        os.makedirs(os.path.dirname(path), exist_ok=True)
++
++        # Файл відкривається на запис: попередній сценарій перезаписується
++        self.file = open(path, 'w', encoding='utf-8')
++        self.file.write('time, linear_x, angular_z\n')
++        self.start = None
++        self.count = 0
++
++        self.subscription = self.create_subscription(
++            Twist, '/cmd_vel', self.cmd_vel_callback, 10)
++        self.get_logger().info(f'Recording /cmd_vel to {path}. Press Ctrl+C to finish.')
++
++    def cmd_vel_callback(self, msg):
++        now = self.get_clock().now().nanoseconds / 1e9
++        if self.start is None:
++            # Час відраховується від першої отриманої команди
++            self.start = now
++        elapsed = now - self.start
++
++        self.file.write(f'{elapsed:.3f}, {msg.linear.x:.3f}, {msg.angular.z:.3f}\n')
++        # flush: дані потрапляють у файл одразу, навіть якщо ноду буде перервано
++        self.file.flush()
++        self.count += 1
++        self.get_logger().info(
++            f'#{self.count} t={elapsed:.3f} s, '
++            f'linear.x={msg.linear.x:.3f}, angular.z={msg.angular.z:.3f}')
++
++    def close(self):
++        self.file.close()
++        self.get_logger().info(f'Recording finished: {self.count} commands saved')
++
++
++def main(args=None):
++    rclpy.init(args=args)
++    node = RecordNode()
++    try:
++        rclpy.spin(node)
++    except KeyboardInterrupt:
++        pass
++    finally:
++        node.close()
++        node.destroy_node()
++        if rclpy.ok():
++            rclpy.shutdown()
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/record_playback/resource/record_playback b/record_playback/resource/record_playback
+new file mode 100644
+index 0000000..e69de29
+diff --git a/record_playback/setup.cfg b/record_playback/setup.cfg
+new file mode 100644
+index 0000000..5bcdf9f
+--- /dev/null
++++ b/record_playback/setup.cfg
+@@ -0,0 +1,4 @@
++[develop]
++script_dir=$base/lib/record_playback
++[install]
++install_scripts=$base/lib/record_playback
+diff --git a/record_playback/setup.py b/record_playback/setup.py
+new file mode 100644
+index 0000000..5f9fe90
+--- /dev/null
++++ b/record_playback/setup.py
+@@ -0,0 +1,31 @@
++from setuptools import find_packages, setup
++
++package_name = 'record_playback'
++
++setup(
++    name=package_name,
++    version='0.0.0',
++    packages=find_packages(exclude=['test']),
++    data_files=[
++        ('share/ament_index/resource_index/packages',
++            ['resource/' + package_name]),
++        ('share/' + package_name, ['package.xml']),
++    ],
++    install_requires=['setuptools'],
++    zip_safe=True,
++    maintainer='tokar',
++    maintainer_email='tokar@todo.todo',
++    description='TODO: Package description',
++    license='Apache-2.0',
++    extras_require={
++        'test': [
++            'pytest',
++        ],
++    },
++    entry_points={
++        'console_scripts': [
++            'record_node = record_playback.record_node:main',
++            'playback_node = record_playback.playback_node:main',
++        ],
++    },
++)
+diff --git a/record_playback/test/test_copyright.py b/record_playback/test/test_copyright.py
+new file mode 100644
+index 0000000..97a3919
+--- /dev/null
++++ b/record_playback/test/test_copyright.py
+@@ -0,0 +1,25 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_copyright.main import main
++import pytest
++
++
++# Remove the `skip` decorator once the source file(s) have a copyright header
++@pytest.mark.skip(reason='No copyright header has been placed in the generated source file.')
++@pytest.mark.copyright
++@pytest.mark.linter
++def test_copyright():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found errors'
+diff --git a/record_playback/test/test_flake8.py b/record_playback/test/test_flake8.py
+new file mode 100644
+index 0000000..27ee107
+--- /dev/null
++++ b/record_playback/test/test_flake8.py
+@@ -0,0 +1,25 @@
++# Copyright 2017 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_flake8.main import main_with_errors
++import pytest
++
++
++@pytest.mark.flake8
++@pytest.mark.linter
++def test_flake8():
++    rc, errors = main_with_errors(argv=[])
++    assert rc == 0, \
++        'Found %d code style errors / warnings:\n' % len(errors) + \
++        '\n'.join(errors)
+diff --git a/record_playback/test/test_pep257.py b/record_playback/test/test_pep257.py
+new file mode 100644
+index 0000000..b234a38
+--- /dev/null
++++ b/record_playback/test/test_pep257.py
+@@ -0,0 +1,23 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_pep257.main import main
++import pytest
++
++
++@pytest.mark.linter
++@pytest.mark.pep257
++def test_pep257():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found code style errors / warnings'
+diff --git a/robot_gui/LICENSE b/robot_gui/LICENSE
+new file mode 100644
+index 0000000..d645695
+--- /dev/null
++++ b/robot_gui/LICENSE
+@@ -0,0 +1,202 @@
++
++                                 Apache License
++                           Version 2.0, January 2004
++                        http://www.apache.org/licenses/
++
++   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
++
++   1. Definitions.
++
++      "License" shall mean the terms and conditions for use, reproduction,
++      and distribution as defined by Sections 1 through 9 of this document.
++
++      "Licensor" shall mean the copyright owner or entity authorized by
++      the copyright owner that is granting the License.
++
++      "Legal Entity" shall mean the union of the acting entity and all
++      other entities that control, are controlled by, or are under common
++      control with that entity. For the purposes of this definition,
++      "control" means (i) the power, direct or indirect, to cause the
++      direction or management of such entity, whether by contract or
++      otherwise, or (ii) ownership of fifty percent (50%) or more of the
++      outstanding shares, or (iii) beneficial ownership of such entity.
++
++      "You" (or "Your") shall mean an individual or Legal Entity
++      exercising permissions granted by this License.
++
++      "Source" form shall mean the preferred form for making modifications,
++      including but not limited to software source code, documentation
++      source, and configuration files.
++
++      "Object" form shall mean any form resulting from mechanical
++      transformation or translation of a Source form, including but
++      not limited to compiled object code, generated documentation,
++      and conversions to other media types.
++
++      "Work" shall mean the work of authorship, whether in Source or
++      Object form, made available under the License, as indicated by a
++      copyright notice that is included in or attached to the work
++      (an example is provided in the Appendix below).
++
++      "Derivative Works" shall mean any work, whether in Source or Object
++      form, that is based on (or derived from) the Work and for which the
++      editorial revisions, annotations, elaborations, or other modifications
++      represent, as a whole, an original work of authorship. For the purposes
++      of this License, Derivative Works shall not include works that remain
++      separable from, or merely link (or bind by name) to the interfaces of,
++      the Work and Derivative Works thereof.
++
++      "Contribution" shall mean any work of authorship, including
++      the original version of the Work and any modifications or additions
++      to that Work or Derivative Works thereof, that is intentionally
++      submitted to Licensor for inclusion in the Work by the copyright owner
++      or by an individual or Legal Entity authorized to submit on behalf of
++      the copyright owner. For the purposes of this definition, "submitted"
++      means any form of electronic, verbal, or written communication sent
++      to the Licensor or its representatives, including but not limited to
++      communication on electronic mailing lists, source code control systems,
++      and issue tracking systems that are managed by, or on behalf of, the
++      Licensor for the purpose of discussing and improving the Work, but
++      excluding communication that is conspicuously marked or otherwise
++      designated in writing by the copyright owner as "Not a Contribution."
++
++      "Contributor" shall mean Licensor and any individual or Legal Entity
++      on behalf of whom a Contribution has been received by Licensor and
++      subsequently incorporated within the Work.
++
++   2. Grant of Copyright License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      copyright license to reproduce, prepare Derivative Works of,
++      publicly display, publicly perform, sublicense, and distribute the
++      Work and such Derivative Works in Source or Object form.
++
++   3. Grant of Patent License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      (except as stated in this section) patent license to make, have made,
++      use, offer to sell, sell, import, and otherwise transfer the Work,
++      where such license applies only to those patent claims licensable
++      by such Contributor that are necessarily infringed by their
++      Contribution(s) alone or by combination of their Contribution(s)
++      with the Work to which such Contribution(s) was submitted. If You
++      institute patent litigation against any entity (including a
++      cross-claim or counterclaim in a lawsuit) alleging that the Work
++      or a Contribution incorporated within the Work constitutes direct
++      or contributory patent infringement, then any patent licenses
++      granted to You under this License for that Work shall terminate
++      as of the date such litigation is filed.
++
++   4. Redistribution. You may reproduce and distribute copies of the
++      Work or Derivative Works thereof in any medium, with or without
++      modifications, and in Source or Object form, provided that You
++      meet the following conditions:
++
++      (a) You must give any other recipients of the Work or
++          Derivative Works a copy of this License; and
++
++      (b) You must cause any modified files to carry prominent notices
++          stating that You changed the files; and
++
++      (c) You must retain, in the Source form of any Derivative Works
++          that You distribute, all copyright, patent, trademark, and
++          attribution notices from the Source form of the Work,
++          excluding those notices that do not pertain to any part of
++          the Derivative Works; and
++
++      (d) If the Work includes a "NOTICE" text file as part of its
++          distribution, then any Derivative Works that You distribute must
++          include a readable copy of the attribution notices contained
++          within such NOTICE file, excluding those notices that do not
++          pertain to any part of the Derivative Works, in at least one
++          of the following places: within a NOTICE text file distributed
++          as part of the Derivative Works; within the Source form or
++          documentation, if provided along with the Derivative Works; or,
++          within a display generated by the Derivative Works, if and
++          wherever such third-party notices normally appear. The contents
++          of the NOTICE file are for informational purposes only and
++          do not modify the License. You may add Your own attribution
++          notices within Derivative Works that You distribute, alongside
++          or as an addendum to the NOTICE text from the Work, provided
++          that such additional attribution notices cannot be construed
++          as modifying the License.
++
++      You may add Your own copyright statement to Your modifications and
++      may provide additional or different license terms and conditions
++      for use, reproduction, or distribution of Your modifications, or
++      for any such Derivative Works as a whole, provided Your use,
++      reproduction, and distribution of the Work otherwise complies with
++      the conditions stated in this License.
++
++   5. Submission of Contributions. Unless You explicitly state otherwise,
++      any Contribution intentionally submitted for inclusion in the Work
++      by You to the Licensor shall be under the terms and conditions of
++      this License, without any additional terms or conditions.
++      Notwithstanding the above, nothing herein shall supersede or modify
++      the terms of any separate license agreement you may have executed
++      with Licensor regarding such Contributions.
++
++   6. Trademarks. This License does not grant permission to use the trade
++      names, trademarks, service marks, or product names of the Licensor,
++      except as required for reasonable and customary use in describing the
++      origin of the Work and reproducing the content of the NOTICE file.
++
++   7. Disclaimer of Warranty. Unless required by applicable law or
++      agreed to in writing, Licensor provides the Work (and each
++      Contributor provides its Contributions) on an "AS IS" BASIS,
++      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++      implied, including, without limitation, any warranties or conditions
++      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
++      PARTICULAR PURPOSE. You are solely responsible for determining the
++      appropriateness of using or redistributing the Work and assume any
++      risks associated with Your exercise of permissions under this License.
++
++   8. Limitation of Liability. In no event and under no legal theory,
++      whether in tort (including negligence), contract, or otherwise,
++      unless required by applicable law (such as deliberate and grossly
++      negligent acts) or agreed to in writing, shall any Contributor be
++      liable to You for damages, including any direct, indirect, special,
++      incidental, or consequential damages of any character arising as a
++      result of this License or out of the use or inability to use the
++      Work (including but not limited to damages for loss of goodwill,
++      work stoppage, computer failure or malfunction, or any and all
++      other commercial damages or losses), even if such Contributor
++      has been advised of the possibility of such damages.
++
++   9. Accepting Warranty or Additional Liability. While redistributing
++      the Work or Derivative Works thereof, You may choose to offer,
++      and charge a fee for, acceptance of support, warranty, indemnity,
++      or other liability obligations and/or rights consistent with this
++      License. However, in accepting such obligations, You may act only
++      on Your own behalf and on Your sole responsibility, not on behalf
++      of any other Contributor, and only if You agree to indemnify,
++      defend, and hold each Contributor harmless for any liability
++      incurred by, or claims asserted against, such Contributor by reason
++      of your accepting any such warranty or additional liability.
++
++   END OF TERMS AND CONDITIONS
++
++   APPENDIX: How to apply the Apache License to your work.
++
++      To apply the Apache License to your work, attach the following
++      boilerplate notice, with the fields enclosed by brackets "[]"
++      replaced with your own identifying information. (Don't include
++      the brackets!)  The text should be enclosed in the appropriate
++      comment syntax for the file format. We also recommend that a
++      file or class name and description of purpose be included on the
++      same "printed page" as the copyright notice for easier
++      identification within third-party archives.
++
++   Copyright [yyyy] [name of copyright owner]
++
++   Licensed under the Apache License, Version 2.0 (the "License");
++   you may not use this file except in compliance with the License.
++   You may obtain a copy of the License at
++
++       http://www.apache.org/licenses/LICENSE-2.0
++
++   Unless required by applicable law or agreed to in writing, software
++   distributed under the License is distributed on an "AS IS" BASIS,
++   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++   See the License for the specific language governing permissions and
++   limitations under the License.
+diff --git a/robot_gui/package.xml b/robot_gui/package.xml
+new file mode 100644
+index 0000000..57a0047
+--- /dev/null
++++ b/robot_gui/package.xml
+@@ -0,0 +1,23 @@
++<?xml version="1.0"?>
++<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
++<package format="3">
++  <name>robot_gui</name>
++  <version>0.0.0</version>
++  <description>TODO: Package description</description>
++  <maintainer email="tokar@todo.todo">tokar</maintainer>
++  <license>Apache-2.0</license>
++
++  <depend>rclpy</depend>
++  <depend>geometry_msgs</depend>
++  <depend>std_msgs</depend>
++  <exec_depend>python3-pyqt5</exec_depend>
++
++  <test_depend>ament_copyright</test_depend>
++  <test_depend>ament_flake8</test_depend>
++  <test_depend>ament_pep257</test_depend>
++  <test_depend>python3-pytest</test_depend>
++
++  <export>
++    <build_type>ament_python</build_type>
++  </export>
++</package>
+diff --git a/robot_gui/resource/robot_gui b/robot_gui/resource/robot_gui
+new file mode 100644
+index 0000000..e69de29
+diff --git a/robot_gui/robot_gui/__init__.py b/robot_gui/robot_gui/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/robot_gui/robot_gui/gui_node.py b/robot_gui/robot_gui/gui_node.py
+new file mode 100644
+index 0000000..6a02fbd
+--- /dev/null
++++ b/robot_gui/robot_gui/gui_node.py
+@@ -0,0 +1,256 @@
++import signal
++import sys
++
++import rclpy
++from rclpy.node import Node
++from geometry_msgs.msg import Twist
++from std_msgs.msg import String
++from PyQt5.QtCore import Qt, QTime, QTimer
++from PyQt5.QtGui import QFont
++from PyQt5.QtWidgets import (
++    QApplication, QDoubleSpinBox, QFormLayout, QGridLayout, QGroupBox,
++    QHBoxLayout, QLabel, QPlainTextEdit, QPushButton, QVBoxLayout, QWidget
++)
++
++# Стилізація інтерфейсу (Modern Dark Theme)
++MODERN_STYLE = """
++QWidget {
++    background-color: #1e1e24;
++    color: #f0f0f5;
++    font-family: 'Segoe UI', 'Ubuntu', sans-serif;
++    font-size: 13px;
++}
++
++QGroupBox {
++    border: 1px solid #3e4251;
++    border-radius: 8px;
++    margin-top: 14px;
++    padding-top: 14px;
++    font-weight: bold;
++    color: #61afef;
++}
++
++QGroupBox::title {
++    subcontrol-origin: margin;
++    left: 12px;
++    padding: 0 6px;
++}
++
++QDoubleSpinBox {
++    background-color: #2b2d3a;
++    border: 1px solid #4f5368;
++    border-radius: 5px;
++    padding: 4px 8px;
++    color: #ffffff;
++    font-weight: bold;
++}
++
++QDoubleSpinBox:focus {
++    border: 1px solid #61afef;
++}
++
++QPushButton {
++    background-color: #2e3440;
++    color: #eceff4;
++    border: 1px solid #4c566a;
++    border-radius: 6px;
++    font-weight: bold;
++    font-size: 13px;
++}
++
++QPushButton:hover {
++    background-color: #3b4252;
++    border-color: #88c0d0;
++}
++
++QPushButton:pressed {
++    background-color: #434c5e;
++}
++
++/* Спеціальний стиль для кнопки СТОП */
++QPushButton#stop_btn {
++    background-color: #e06c75;
++    color: #ffffff;
++    border: 1px solid #be5046;
++}
++
++QPushButton#stop_btn:hover {
++    background-color: #be5046;
++}
++
++QPushButton#stop_btn:pressed {
++    background-color: #983830;
++}
++
++/* Вікно терміналу / логів */
++QPlainTextEdit {
++    background-color: #14161d;
++    border: 1px solid #282c34;
++    border-radius: 6px;
++    color: #98c379;
++    font-family: 'Consolas', 'Courier New', monospace;
++    font-size: 12px;
++    padding: 6px;
++}
++
++QLabel#cmd_badge {
++    background-color: #2b2d3a;
++    border: 1px solid #3e4251;
++    border-radius: 6px;
++    padding: 6px 10px;
++    color: #e5c07b;
++    font-weight: bold;
++}
++"""
++
++
++class RobotGuiNode(Node):
++
++    def __init__(self, on_status):
++        super().__init__('robot_gui')
++        self.publisher_ = self.create_publisher(Twist, '/cmd_vel', 10)
++        self.subscription = self.create_subscription(
++            String, '/motion_status', lambda msg: on_status(msg.data), 10)
++
++    def send_command(self, linear_x, angular_z):
++        msg = Twist()
++        msg.linear.x = float(linear_x)
++        msg.angular.z = float(angular_z)
++        self.publisher_.publish(msg)
++        self.get_logger().info(
++            f'Published /cmd_vel: linear.x={linear_x:.2f}, angular.z={angular_z:.2f}')
++
++
++class ControlWindow(QWidget):
++
++    def __init__(self):
++        super().__init__()
++        self.node = RobotGuiNode(self.show_status)
++        self.setWindowTitle('Керування роботом (ROS2 / Qt GUI)')
++        self.setMinimumWidth(460)
++        self.setStyleSheet(MODERN_STYLE)
++
++        main_layout = QVBoxLayout(self)
++        main_layout.setSpacing(12)
++
++        # --- 1. Блок налаштування швидкості ---
++        speed_group = QGroupBox('Параметри швидкості')
++        speed_form = QFormLayout(speed_group)
++        speed_form.setContentsMargins(15, 15, 15, 15)
++
++        self.linear_speed = self.make_spinbox(0.5)
++        self.angular_speed = self.make_spinbox(1.0)
++        speed_form.addRow('Лінійна швидкість (м/с):', self.linear_speed)
++        speed_form.addRow('Кутова швидкість (рад/с):', self.angular_speed)
++        main_layout.addWidget(speed_group)
++
++        # --- 2. Блок кнопок керування ---
++        control_group = QGroupBox('Пульт керування (або W, A, S, D / Стрілки)')
++        control_layout = QVBoxLayout(control_group)
++
++        buttons_grid = QGridLayout()
++        buttons_grid.setSpacing(8)
++
++        self.add_button(buttons_grid, '▲\nВперед', 0, 1, 1, 0)
++        self.add_button(buttons_grid, '◀\nЛіворуч', 1, 0, 0, 1)
++        self.add_button(buttons_grid, '⏹\nСТОП', 1, 1, 0, 0, is_stop=True)
++        self.add_button(buttons_grid, '▶\nПраворуч', 1, 2, 0, -1)
++        self.add_button(buttons_grid, '▼\nНазад', 2, 1, -1, 0)
++        control_layout.addLayout(buttons_grid)
++
++        self.command_label = QLabel('Остання команда: Очікування дій')
++        self.command_label.setObjectName('cmd_badge')
++        control_layout.addWidget(self.command_label)
++        main_layout.addWidget(control_group)
++
++        # --- 3. Блок журналу та статусу ---
++        status_group = QGroupBox('Статус системи (/motion_status)')
++        status_layout = QVBoxLayout(status_group)
++
++        self.status_box = QPlainTextEdit()
++        self.status_box.setReadOnly(True)
++        self.status_box.setMaximumBlockCount(150)
++        status_layout.addWidget(self.status_box)
++
++        # Кнопка очищення логу
++        clear_btn = QPushButton('Очистити журнал')
++        clear_btn.setFixedHeight(26)
++        clear_btn.clicked.connect(self.status_box.clear)
++        status_layout.addWidget(clear_btn)
++
++        main_layout.addWidget(status_group)
++
++        # Таймер для спину ROS2 (кожні 40 мс = 25 Гц)
++        self.ros_timer = QTimer(self)
++        self.ros_timer.timeout.connect(
++            lambda: rclpy.spin_once(self.node, timeout_sec=0))
++        self.ros_timer.start(40)
++
++        self.show_status('GUI запущено, топіки підключено.')
++
++    def make_spinbox(self, value):
++        box = QDoubleSpinBox()
++        box.setRange(0.0, 5.0)
++        box.setSingleStep(0.1)
++        box.setValue(value)
++        box.setFixedHeight(28)
++        return box
++
++    def add_button(self, grid, text, row, col, linear_dir, angular_dir, is_stop=False):
++        button = QPushButton(text)
++        button.setMinimumSize(100, 55)
++        button.setAutoRepeat(bool(linear_dir or angular_dir))
++        button.setAutoRepeatDelay(250)
++        button.setAutoRepeatInterval(100)
++
++        if is_stop:
++            button.setObjectName('stop_btn')
++
++        button.clicked.connect(
++            lambda: self.on_button(text.replace('\n', ' '), linear_dir, angular_dir))
++        grid.addWidget(button, row, col)
++
++    def on_button(self, name, linear_dir, angular_dir):
++        linear_x = linear_dir * self.linear_speed.value()
++        angular_z = angular_dir * self.angular_speed.value()
++        self.node.send_command(linear_x, angular_z)
++        self.command_label.setText(
++            f'Остання команда: {name} (lin={linear_x:.2f}, ang={angular_z:.2f})')
++
++    def show_status(self, text):
++        time = QTime.currentTime().toString('HH:mm:ss')
++        self.status_box.appendPlainText(f'[{time}] {text}')
++
++    # Підтримка гарячих клавіш з клавіатури
++    def keyPressEvent(self, event):
++        key = event.key()
++        if key in (Qt.Key_Up, Qt.Key_W):
++            self.on_button('Вперед', 1, 0)
++        elif key in (Qt.Key_Down, Qt.Key_S):
++            self.on_button('Назад', -1, 0)
++        elif key in (Qt.Key_Left, Qt.Key_A):
++            self.on_button('Ліворуч', 0, 1)
++        elif key in (Qt.Key_Right, Qt.Key_D):
++            self.on_button('Праворуч', 0, -1)
++        elif key in (Qt.Key_Space, Qt.Key_Escape):
++            self.on_button('СТОП', 0, 0)
++        else:
++            super().keyPressEvent(event)
++
++
++def main(args=None):
++    rclpy.init(args=args)
++    app = QApplication(sys.argv)
++    window = ControlWindow()
++    window.show()
++
++    signal.signal(signal.SIGINT, lambda *_: app.quit())
++    app.exec_()
++
++    window.node.send_command(0.0, 0.0)
++    window.node.destroy_node()
++    rclpy.shutdown()
++
++
++if __name__ == '__main__':
++    main()
+\ No newline at end of file
+diff --git a/robot_gui/setup.cfg b/robot_gui/setup.cfg
+new file mode 100644
+index 0000000..79c2c9f
+--- /dev/null
++++ b/robot_gui/setup.cfg
+@@ -0,0 +1,4 @@
++[develop]
++script_dir=$base/lib/robot_gui
++[install]
++install_scripts=$base/lib/robot_gui
+diff --git a/robot_gui/setup.py b/robot_gui/setup.py
+new file mode 100644
+index 0000000..defc9dd
+--- /dev/null
++++ b/robot_gui/setup.py
+@@ -0,0 +1,30 @@
++from setuptools import find_packages, setup
++
++package_name = 'robot_gui'
++
++setup(
++    name=package_name,
++    version='0.0.0',
++    packages=find_packages(exclude=['test']),
++    data_files=[
++        ('share/ament_index/resource_index/packages',
++            ['resource/' + package_name]),
++        ('share/' + package_name, ['package.xml']),
++    ],
++    install_requires=['setuptools'],
++    zip_safe=True,
++    maintainer='tokar',
++    maintainer_email='tokar@todo.todo',
++    description='TODO: Package description',
++    license='Apache-2.0',
++    extras_require={
++        'test': [
++            'pytest',
++        ],
++    },
++    entry_points={
++        'console_scripts': [
++            'gui_node = robot_gui.gui_node:main'
++        ],
++    },
++)
+diff --git a/robot_gui/test/test_copyright.py b/robot_gui/test/test_copyright.py
+new file mode 100644
+index 0000000..97a3919
+--- /dev/null
++++ b/robot_gui/test/test_copyright.py
+@@ -0,0 +1,25 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_copyright.main import main
++import pytest
++
++
++# Remove the `skip` decorator once the source file(s) have a copyright header
++@pytest.mark.skip(reason='No copyright header has been placed in the generated source file.')
++@pytest.mark.copyright
++@pytest.mark.linter
++def test_copyright():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found errors'
+diff --git a/robot_gui/test/test_flake8.py b/robot_gui/test/test_flake8.py
+new file mode 100644
+index 0000000..27ee107
+--- /dev/null
++++ b/robot_gui/test/test_flake8.py
+@@ -0,0 +1,25 @@
++# Copyright 2017 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_flake8.main import main_with_errors
++import pytest
++
++
++@pytest.mark.flake8
++@pytest.mark.linter
++def test_flake8():
++    rc, errors = main_with_errors(argv=[])
++    assert rc == 0, \
++        'Found %d code style errors / warnings:\n' % len(errors) + \
++        '\n'.join(errors)
+diff --git a/robot_gui/test/test_pep257.py b/robot_gui/test/test_pep257.py
+new file mode 100644
+index 0000000..b234a38
+--- /dev/null
++++ b/robot_gui/test/test_pep257.py
+@@ -0,0 +1,23 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_pep257.main import main
++import pytest
++
++
++@pytest.mark.linter
++@pytest.mark.pep257
++def test_pep257():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found code style errors / warnings'
+diff --git a/sensor_pkg/LICENSE b/sensor_pkg/LICENSE
+new file mode 100644
+index 0000000..d645695
+--- /dev/null
++++ b/sensor_pkg/LICENSE
+@@ -0,0 +1,202 @@
++
++                                 Apache License
++                           Version 2.0, January 2004
++                        http://www.apache.org/licenses/
++
++   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
++
++   1. Definitions.
++
++      "License" shall mean the terms and conditions for use, reproduction,
++      and distribution as defined by Sections 1 through 9 of this document.
++
++      "Licensor" shall mean the copyright owner or entity authorized by
++      the copyright owner that is granting the License.
++
++      "Legal Entity" shall mean the union of the acting entity and all
++      other entities that control, are controlled by, or are under common
++      control with that entity. For the purposes of this definition,
++      "control" means (i) the power, direct or indirect, to cause the
++      direction or management of such entity, whether by contract or
++      otherwise, or (ii) ownership of fifty percent (50%) or more of the
++      outstanding shares, or (iii) beneficial ownership of such entity.
++
++      "You" (or "Your") shall mean an individual or Legal Entity
++      exercising permissions granted by this License.
++
++      "Source" form shall mean the preferred form for making modifications,
++      including but not limited to software source code, documentation
++      source, and configuration files.
++
++      "Object" form shall mean any form resulting from mechanical
++      transformation or translation of a Source form, including but
++      not limited to compiled object code, generated documentation,
++      and conversions to other media types.
++
++      "Work" shall mean the work of authorship, whether in Source or
++      Object form, made available under the License, as indicated by a
++      copyright notice that is included in or attached to the work
++      (an example is provided in the Appendix below).
++
++      "Derivative Works" shall mean any work, whether in Source or Object
++      form, that is based on (or derived from) the Work and for which the
++      editorial revisions, annotations, elaborations, or other modifications
++      represent, as a whole, an original work of authorship. For the purposes
++      of this License, Derivative Works shall not include works that remain
++      separable from, or merely link (or bind by name) to the interfaces of,
++      the Work and Derivative Works thereof.
++
++      "Contribution" shall mean any work of authorship, including
++      the original version of the Work and any modifications or additions
++      to that Work or Derivative Works thereof, that is intentionally
++      submitted to Licensor for inclusion in the Work by the copyright owner
++      or by an individual or Legal Entity authorized to submit on behalf of
++      the copyright owner. For the purposes of this definition, "submitted"
++      means any form of electronic, verbal, or written communication sent
++      to the Licensor or its representatives, including but not limited to
++      communication on electronic mailing lists, source code control systems,
++      and issue tracking systems that are managed by, or on behalf of, the
++      Licensor for the purpose of discussing and improving the Work, but
++      excluding communication that is conspicuously marked or otherwise
++      designated in writing by the copyright owner as "Not a Contribution."
++
++      "Contributor" shall mean Licensor and any individual or Legal Entity
++      on behalf of whom a Contribution has been received by Licensor and
++      subsequently incorporated within the Work.
++
++   2. Grant of Copyright License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      copyright license to reproduce, prepare Derivative Works of,
++      publicly display, publicly perform, sublicense, and distribute the
++      Work and such Derivative Works in Source or Object form.
++
++   3. Grant of Patent License. Subject to the terms and conditions of
++      this License, each Contributor hereby grants to You a perpetual,
++      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
++      (except as stated in this section) patent license to make, have made,
++      use, offer to sell, sell, import, and otherwise transfer the Work,
++      where such license applies only to those patent claims licensable
++      by such Contributor that are necessarily infringed by their
++      Contribution(s) alone or by combination of their Contribution(s)
++      with the Work to which such Contribution(s) was submitted. If You
++      institute patent litigation against any entity (including a
++      cross-claim or counterclaim in a lawsuit) alleging that the Work
++      or a Contribution incorporated within the Work constitutes direct
++      or contributory patent infringement, then any patent licenses
++      granted to You under this License for that Work shall terminate
++      as of the date such litigation is filed.
++
++   4. Redistribution. You may reproduce and distribute copies of the
++      Work or Derivative Works thereof in any medium, with or without
++      modifications, and in Source or Object form, provided that You
++      meet the following conditions:
++
++      (a) You must give any other recipients of the Work or
++          Derivative Works a copy of this License; and
++
++      (b) You must cause any modified files to carry prominent notices
++          stating that You changed the files; and
++
++      (c) You must retain, in the Source form of any Derivative Works
++          that You distribute, all copyright, patent, trademark, and
++          attribution notices from the Source form of the Work,
++          excluding those notices that do not pertain to any part of
++          the Derivative Works; and
++
++      (d) If the Work includes a "NOTICE" text file as part of its
++          distribution, then any Derivative Works that You distribute must
++          include a readable copy of the attribution notices contained
++          within such NOTICE file, excluding those notices that do not
++          pertain to any part of the Derivative Works, in at least one
++          of the following places: within a NOTICE text file distributed
++          as part of the Derivative Works; within the Source form or
++          documentation, if provided along with the Derivative Works; or,
++          within a display generated by the Derivative Works, if and
++          wherever such third-party notices normally appear. The contents
++          of the NOTICE file are for informational purposes only and
++          do not modify the License. You may add Your own attribution
++          notices within Derivative Works that You distribute, alongside
++          or as an addendum to the NOTICE text from the Work, provided
++          that such additional attribution notices cannot be construed
++          as modifying the License.
++
++      You may add Your own copyright statement to Your modifications and
++      may provide additional or different license terms and conditions
++      for use, reproduction, or distribution of Your modifications, or
++      for any such Derivative Works as a whole, provided Your use,
++      reproduction, and distribution of the Work otherwise complies with
++      the conditions stated in this License.
++
++   5. Submission of Contributions. Unless You explicitly state otherwise,
++      any Contribution intentionally submitted for inclusion in the Work
++      by You to the Licensor shall be under the terms and conditions of
++      this License, without any additional terms or conditions.
++      Notwithstanding the above, nothing herein shall supersede or modify
++      the terms of any separate license agreement you may have executed
++      with Licensor regarding such Contributions.
++
++   6. Trademarks. This License does not grant permission to use the trade
++      names, trademarks, service marks, or product names of the Licensor,
++      except as required for reasonable and customary use in describing the
++      origin of the Work and reproducing the content of the NOTICE file.
++
++   7. Disclaimer of Warranty. Unless required by applicable law or
++      agreed to in writing, Licensor provides the Work (and each
++      Contributor provides its Contributions) on an "AS IS" BASIS,
++      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
++      implied, including, without limitation, any warranties or conditions
++      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
++      PARTICULAR PURPOSE. You are solely responsible for determining the
++      appropriateness of using or redistributing the Work and assume any
++      risks associated with Your exercise of permissions under this License.
++
++   8. Limitation of Liability. In no event and under no legal theory,
++      whether in tort (including negligence), contract, or otherwise,
++      unless required by applicable law (such as deliberate and grossly
++      negligent acts) or agreed to in writing, shall any Contributor be
++      liable to You for damages, including any direct, indirect, special,
++      incidental, or consequential damages of any character arising as a
++      result of this License or out of the use or inability to use the
++      Work (including but not limited to damages for loss of goodwill,
++      work stoppage, computer failure or malfunction, or any and all
++      other commercial damages or losses), even if such Contributor
++      has been advised of the possibility of such damages.
++
++   9. Accepting Warranty or Additional Liability. While redistributing
++      the Work or Derivative Works thereof, You may choose to offer,
++      and charge a fee for, acceptance of support, warranty, indemnity,
++      or other liability obligations and/or rights consistent with this
++      License. However, in accepting such obligations, You may act only
++      on Your own behalf and on Your sole responsibility, not on behalf
++      of any other Contributor, and only if You agree to indemnify,
++      defend, and hold each Contributor harmless for any liability
++      incurred by, or claims asserted against, such Contributor by reason
++      of your accepting any such warranty or additional liability.
++
++   END OF TERMS AND CONDITIONS
++
++   APPENDIX: How to apply the Apache License to your work.
++
++      To apply the Apache License to your work, attach the following
++      boilerplate notice, with the fields enclosed by brackets "[]"
++      replaced with your own identifying information. (Don't include
++      the brackets!)  The text should be enclosed in the appropriate
++      comment syntax for the file format. We also recommend that a
++      file or class name and description of purpose be included on the
++      same "printed page" as the copyright notice for easier
++      identification within third-party archives.
++
++   Copyright [yyyy] [name of copyright owner]
++
++   Licensed under the Apache License, Version 2.0 (the "License");
++   you may not use this file except in compliance with the License.
++   You may obtain a copy of the License at
++
++       http://www.apache.org/licenses/LICENSE-2.0
++
++   Unless required by applicable law or agreed to in writing, software
++   distributed under the License is distributed on an "AS IS" BASIS,
++   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++   See the License for the specific language governing permissions and
++   limitations under the License.
+diff --git a/sensor_pkg/package.xml b/sensor_pkg/package.xml
+new file mode 100644
+index 0000000..b8575fb
+--- /dev/null
++++ b/sensor_pkg/package.xml
+@@ -0,0 +1,21 @@
++<?xml version="1.0"?>
++<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
++<package format="3">
++  <name>sensor_pkg</name>
++  <version>0.0.0</version>
++  <description>TODO: Package description</description>
++  <maintainer email="tokar@todo.todo">tokar</maintainer>
++  <license>Apache-2.0</license>
++
++  <depend>rclpy</depend>
++  <depend>std_msgs</depend>
++
++  <test_depend>ament_copyright</test_depend>
++  <test_depend>ament_flake8</test_depend>
++  <test_depend>ament_pep257</test_depend>
++  <test_depend>python3-pytest</test_depend>
++
++  <export>
++    <build_type>ament_python</build_type>
++  </export>
++</package>
+diff --git a/sensor_pkg/resource/sensor_pkg b/sensor_pkg/resource/sensor_pkg
+new file mode 100644
+index 0000000..e69de29
+diff --git a/sensor_pkg/sensor_pkg/__init__.py b/sensor_pkg/sensor_pkg/__init__.py
+new file mode 100644
+index 0000000..e69de29
+diff --git a/sensor_pkg/sensor_pkg/sensor_node.py b/sensor_pkg/sensor_pkg/sensor_node.py
+new file mode 100644
+index 0000000..dffae39
+--- /dev/null
++++ b/sensor_pkg/sensor_pkg/sensor_node.py
+@@ -0,0 +1,111 @@
++import math
++import random
++from collections import deque
++
++import rclpy
++from rclpy.node import Node
++from std_msgs.msg import Bool, Float32, String
++
++
++class SensorNode(Node):
++
++    def __init__(self):
++        super().__init__('sensor_node')
++        self.declare_parameter('publish_rate', 10.0)        # Гц
++        self.declare_parameter('window_size', 7)            # розмір вікна усереднення
++        self.declare_parameter('threshold', 0.6)            # м, нижче — критично
++        self.declare_parameter('noise_std', 0.04)           # м, шум сенсора
++        self.declare_parameter('spike_probability', 0.02)   # імовірність викиду
++        self.declare_parameter('period', 24.0)              # с, період зміни відстані
++        self.declare_parameter('fault_probability', 0.0)    # імітація збоїв читання
++
++        self.rate = self.get_parameter('publish_rate').value
++        self.window = deque(maxlen=self.get_parameter('window_size').value)
++        self.noise_std = self.get_parameter('noise_std').value
++        self.spike_probability = self.get_parameter('spike_probability').value
++        self.period = self.get_parameter('period').value
++
++        self.raw_pub = self.create_publisher(Float32, '/sensor_data', 10)
++        self.filtered_pub = self.create_publisher(Float32, '/sensor_data_filtered', 10)
++        self.alarm_pub = self.create_publisher(Bool, '/sensor_alarm', 10)
++        self.heartbeat_pub = self.create_publisher(String, '/heartbeat', 10)
++
++        self.step = 0
++        self.alarm = False
++        self.heartbeat_count = 0
++        # Таймер задає періодичність публікації (10 Гц = кожні 0.1 с)
++        self.timer = self.create_timer(1.0 / self.rate, self.timer_callback)
++        # Heartbeat: сигнал активності раз на секунду
++        self.heartbeat_timer = self.create_timer(1.0, self.heartbeat_callback)
++
++        self.get_logger().info(
++            f'Sensor Node started: rate={self.rate} Hz, '
++            f'window={self.window.maxlen}, threshold={self.get_parameter("threshold").value} m')
++
++    def heartbeat_callback(self):
++        msg = String()
++        msg.data = f'sensor_node is alive, beat={self.heartbeat_count}'
++        self.heartbeat_pub.publish(msg)
++        self.get_logger().debug(f'Heartbeat sent: {msg.data}')
++        self.heartbeat_count += 1
++
++    def read_sensor(self):
++        # Імітація дальноміра: плавна зміна відстані + шум + рідкісні викиди
++        t = self.step / self.rate
++        value = 1.4 + 1.0 * math.sin(2.0 * math.pi * t / self.period)
++        value += random.gauss(0.0, self.noise_std)
++        if random.random() < self.spike_probability:
++            value = random.uniform(0.08, 0.2)
++        return max(value, 0.02)
++
++    def timer_callback(self):
++        # Імітація збою читання: дані не публікуються, у лог іде ERROR
++        if random.random() < self.get_parameter('fault_probability').value:
++            self.step += 1
++            self.get_logger().error(
++                'Sensor read failed: no response from device', throttle_duration_sec=1.0)
++            return
++
++        raw = self.read_sensor()
++        self.step += 1
++        self.get_logger().debug(f'Sample #{self.step}: raw={raw:.3f} m')
++
++        # Усереднення: середнє арифметичне останніх N вимірювань
++        self.window.append(raw)
++        filtered = sum(self.window) / len(self.window)
++
++        self.raw_pub.publish(Float32(data=raw))
++        self.filtered_pub.publish(Float32(data=filtered))
++
++        # Поріг читається щоразу, тож його можна змінювати командою ros2 param set
++        threshold = self.get_parameter('threshold').value
++        critical = filtered < threshold
++        if critical:
++            self.get_logger().warn(
++                f'CRITICAL: filtered={filtered:.2f} m is below threshold {threshold:.2f} m',
++                throttle_duration_sec=1.0)
++        elif self.alarm:
++            self.get_logger().info(f'Value back to normal: filtered={filtered:.2f} m')
++        self.alarm = critical
++        self.alarm_pub.publish(Bool(data=self.alarm))
++
++        self.get_logger().info(
++            f'raw={raw:.2f} m, filtered={filtered:.2f} m', throttle_duration_sec=1.0)
++
++
++def main(args=None):
++    rclpy.init(args=args)
++    node = SensorNode()
++    try:
++        rclpy.spin(node)
++    except KeyboardInterrupt:
++        pass
++    finally:
++        node.get_logger().info('Sensor Node stopped')
++        node.destroy_node()
++        if rclpy.ok():
++            rclpy.shutdown()
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/sensor_pkg/setup.cfg b/sensor_pkg/setup.cfg
+new file mode 100644
+index 0000000..2cca799
+--- /dev/null
++++ b/sensor_pkg/setup.cfg
+@@ -0,0 +1,4 @@
++[develop]
++script_dir=$base/lib/sensor_pkg
++[install]
++install_scripts=$base/lib/sensor_pkg
+diff --git a/sensor_pkg/setup.py b/sensor_pkg/setup.py
+new file mode 100644
+index 0000000..bd35e42
+--- /dev/null
++++ b/sensor_pkg/setup.py
+@@ -0,0 +1,30 @@
++from setuptools import find_packages, setup
++
++package_name = 'sensor_pkg'
++
++setup(
++    name=package_name,
++    version='0.0.0',
++    packages=find_packages(exclude=['test']),
++    data_files=[
++        ('share/ament_index/resource_index/packages',
++            ['resource/' + package_name]),
++        ('share/' + package_name, ['package.xml']),
++    ],
++    install_requires=['setuptools'],
++    zip_safe=True,
++    maintainer='tokar',
++    maintainer_email='tokar@todo.todo',
++    description='TODO: Package description',
++    license='Apache-2.0',
++    extras_require={
++        'test': [
++            'pytest',
++        ],
++    },
++    entry_points={
++        'console_scripts': [
++            'sensor_node = sensor_pkg.sensor_node:main'
++        ],
++    },
++)
+diff --git a/sensor_pkg/test/test_copyright.py b/sensor_pkg/test/test_copyright.py
+new file mode 100644
+index 0000000..97a3919
+--- /dev/null
++++ b/sensor_pkg/test/test_copyright.py
+@@ -0,0 +1,25 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_copyright.main import main
++import pytest
++
++
++# Remove the `skip` decorator once the source file(s) have a copyright header
++@pytest.mark.skip(reason='No copyright header has been placed in the generated source file.')
++@pytest.mark.copyright
++@pytest.mark.linter
++def test_copyright():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found errors'
+diff --git a/sensor_pkg/test/test_flake8.py b/sensor_pkg/test/test_flake8.py
+new file mode 100644
+index 0000000..27ee107
+--- /dev/null
++++ b/sensor_pkg/test/test_flake8.py
+@@ -0,0 +1,25 @@
++# Copyright 2017 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_flake8.main import main_with_errors
++import pytest
++
++
++@pytest.mark.flake8
++@pytest.mark.linter
++def test_flake8():
++    rc, errors = main_with_errors(argv=[])
++    assert rc == 0, \
++        'Found %d code style errors / warnings:\n' % len(errors) + \
++        '\n'.join(errors)
+diff --git a/sensor_pkg/test/test_pep257.py b/sensor_pkg/test/test_pep257.py
+new file mode 100644
+index 0000000..b234a38
+--- /dev/null
++++ b/sensor_pkg/test/test_pep257.py
+@@ -0,0 +1,23 @@
++# Copyright 2015 Open Source Robotics Foundation, Inc.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++from ament_pep257.main import main
++import pytest
++
++
++@pytest.mark.linter
++@pytest.mark.pep257
++def test_pep257():
++    rc = main(argv=['.', 'test'])
++    assert rc == 0, 'Found code style errors / warnings'

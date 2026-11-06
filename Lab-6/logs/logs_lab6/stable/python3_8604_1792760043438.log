@@ -1,0 +1,9 @@
+[INFO] [1792760043.487338107] [sensor_node]: Sensor Node started: rate=10.0 Hz, window=7, threshold=0.6 m
+[INFO] [1792760043.577691463] [sensor_node]: raw=1.45 m, filtered=1.45 m
+[INFO] [1792760044.577979148] [sensor_node]: raw=1.71 m, filtered=1.60 m
+[INFO] [1792760045.677550691] [sensor_node]: raw=1.87 m, filtered=1.86 m
+[INFO] [1792760046.677878223] [sensor_node]: raw=2.09 m, filtered=2.09 m
+[INFO] [1792760047.677970500] [sensor_node]: raw=2.29 m, filtered=2.24 m
+[INFO] [1792760048.677997880] [sensor_node]: raw=2.34 m, filtered=2.35 m
+[INFO] [1792760049.777258067] [sensor_node]: raw=2.47 m, filtered=2.41 m
+[INFO] [1792760050.181500550] [sensor_node]: Sensor Node stopped

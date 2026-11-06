@@ -1,0 +1,18 @@
+[INFO] [1792760095.839535856] [monitor_node]: Monitor Node started: heartbeat_timeout=2.5 s, data_timeout=2.5 s, expected_rate=10.0 Hz
+[WARN] [1792760096.829673013] [monitor_node]: Data unstable: rate 0.0 Hz (expected 10.0 Hz)
+[WARN] [1792760097.828514062] [monitor_node]: Data unstable: rate 0.0 Hz (expected 10.0 Hz)
+[ERROR] [1792760098.829149355] [monitor_node]: Heartbeat lost: no signal for 3.0 s, node is not responding
+[INFO] [1792760098.829797517] [monitor_node]: Status changed: WARN -> ERROR
+[ERROR] [1792760099.828912085] [monitor_node]: Heartbeat lost: no signal for 4.0 s, node is not responding
+[ERROR] [1792760100.828510317] [monitor_node]: Heartbeat lost: no signal for 5.0 s, node is not responding
+[ERROR] [1792760101.828549254] [monitor_node]: Heartbeat lost: no signal for 6.0 s, node is not responding
+[ERROR] [1792760102.828424209] [monitor_node]: Heartbeat lost: no signal for 7.0 s, node is not responding
+[ERROR] [1792760103.828491197] [monitor_node]: Heartbeat lost: no signal for 8.0 s, node is not responding
+[ERROR] [1792760104.830225808] [monitor_node]: Heartbeat lost: no signal for 9.0 s, node is not responding
+[ERROR] [1792760105.828323146] [monitor_node]: Heartbeat lost: no signal for 10.0 s, node is not responding
+[ERROR] [1792760106.829326047] [monitor_node]: Heartbeat lost: no signal for 11.0 s, node is not responding
+[ERROR] [1792760107.829334765] [monitor_node]: Heartbeat lost: no signal for 12.0 s, node is not responding
+[ERROR] [1792760108.828988792] [monitor_node]: Heartbeat lost: no signal for 13.0 s, node is not responding
+[ERROR] [1792760109.829005650] [monitor_node]: Heartbeat lost: no signal for 14.0 s, node is not responding
+[ERROR] [1792760110.828403428] [monitor_node]: Heartbeat lost: no signal for 15.0 s, node is not responding
+[ERROR] [1792760111.829071029] [monitor_node]: Heartbeat lost: no signal for 16.0 s, node is not responding
